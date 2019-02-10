@@ -7,6 +7,7 @@ What can be displayed there?
 * App version
 * Code commit
 * Last data import date
+* ... anything else you find useful for your development
 
 ### Future work
 
@@ -15,6 +16,8 @@ What can be displayed there?
 * Diagnostic info about app idle/busy status.
 
 ### Example
+
+Diagnostic info like app version can be displayed with function `display()`: `shiny.info::display("My App Version")`.
 
 1. Install `shiny.info`: `devtools::install_github("Appsilon/shiny.info")`
 2. Just run the code below:
