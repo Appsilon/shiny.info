@@ -17,7 +17,9 @@ What can be displayed there?
 
 ### Example
 
-Diagnostic info like app version can be displayed with function `display()`: `shiny.info::display("My App Version")`.
+Diagnostic info like app version can be displayed with function `display()`: `shiny.info::display("My App Version")`. See top right corner here:
+
+![](example.png)
 
 1. Install `shiny.info`: `devtools::install_github("Appsilon/shiny.info")`
 2. Just run the code below:
