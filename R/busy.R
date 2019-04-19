@@ -1,6 +1,8 @@
 #' Busy or not
 #' 
 #' Displays a spinner indicating if there are any calculations running on the server side.
+#' 
+#' Sulition inspired by: \url{https://colinfay.me/watch-r-shiny/}.
 #'
 #' @return shiny tag List with js script, style of spinner and display div
 #' @export
