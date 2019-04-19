@@ -1,4 +1,10 @@
-display <- function(version) {
+#' Display message on the top-right corner
+#'
+#' @param message character with any message you want
+#'
+#' @return div which wraps your message to display it in the top-right corner of your shiny app.
+#' @export
+display <- function(message) {
   style = "
     position: absolute;
     top: 0;
@@ -9,5 +15,5 @@ display <- function(version) {
     padding: 3px 8px;
     font-size: 12px;"
 
-  div(style = style, version)
+  div(style = style, message)
 }
