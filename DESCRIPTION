@@ -1,8 +1,7 @@
 Package: shiny.info
 Type: Package
 Version: 0.1
-Authors@R: c(person("Paweł", "Przytuła", email = "pawel@appsilon.com",
-  role = "aut")
+Authors@R: c(person("Paweł", "Przytuła", email = "pawel@appsilon.com", role = "aut"))
 Title: Shiny Info
 Description: Display simple diagnostic info of your Shiny app
 License: MIT + file LICENSE
