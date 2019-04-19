@@ -1,9 +1,9 @@
 Package: shiny.info
 Type: Package
+Version: 0.1
+Authors@R: c(person("Paweł", "Przytuła", email = "pawel@appsilon.com", role = "aut"))
 Title: Shiny Info
-Version: 1.0
-Author: Paweł Przytuła
-Maintainer: Paweł Przytuła <pawel@appsilon.com>
 Description: Display simple diagnostic info of your Shiny app
-License: MIT
+License: MIT + file LICENSE
+BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8
