@@ -7,3 +7,4 @@ Description: Display simple diagnostic info of your Shiny app
 License: MIT + file LICENSE
 BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8
+RoxygenNote: 6.1.1
