@@ -13,7 +13,8 @@ display <- function(message) {
     height: auto;
     background-color: #E0E0E0;
     padding: 3px 8px;
-    font-size: 12px;"
+    font-size: 12px;
+    z-index = 9999;"
 
   div(style = style, message)
 }

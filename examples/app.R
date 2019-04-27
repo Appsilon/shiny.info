@@ -5,7 +5,7 @@ VERSION = "1.2.2"
 
 shinyApp(
   ui = tagList(
-    shiny.info::busy(),
+    shiny.info::busy("spinner"),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
@@ -28,7 +28,7 @@ shinyApp(
     })
     
     clusters <- reactive({
-      Sys.sleep(0.2)
+      Sys.sleep(1.5)
       kmeans(selectedData(), input$clusters)
     })
     
