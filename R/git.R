@@ -19,6 +19,7 @@ git_info <- function() {
       git_message <- "Empty repo."
     } else {
       last_commit <- as.character(commits(repo)[[1]]$message)
+      stat <- status(repo)
       changes <- ""
       if (length(stat$unstaged$modified) + length(stat$staged$modified) > 0)
         changes <- "(!) Repo has some not commited changes"
