@@ -4,6 +4,7 @@
 #' 
 #' @import git2r
 #' @import shiny
+#' @import glue
 #' @export
 git_info <- function() {
   repo <- tryCatch({
@@ -22,11 +23,10 @@ git_info <- function() {
       stat <- status(repo)
       changes <- ""
       if (length(stat$unstaged$modified) + length(stat$staged$modified) > 0)
-        changes <- "(!) Repo has some not commited changes"
-      git_message <- span(paste("Branch:", branch),
-                          br(),
-                          paste("Last commit: ", last_commit),
-                          br(), changes
+        changes <- HTML("<font color='red'>(!) Not commited changes</b></font>")
+      git_message <- span(HTML(glue("Branch: <b>{branch}</b> </br>")),
+                          HTML(glue("Last commit: <b>{last_commit}</b></br>")),
+                          changes
                       )
     }
   }
