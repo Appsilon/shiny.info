@@ -29,7 +29,7 @@ display <- function(message, position = "top right") {
         background-color: #f5f5f5;
         padding: 3px 8px;
         font-size: 12px;
-        z-index = 9999;
+        z-index : 9999;
         }
         #shinyinfo a {
         color: #0099f9;

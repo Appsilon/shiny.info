@@ -5,7 +5,7 @@ VERSION = "1.2.2"
 
 shinyApp(
   ui = tagList(
-    shiny.info::powered_by("spinner", "https://sport.pl", "bottom right"),
+    shiny.info::powered_by("Appsilon", "https://appsilon.com", "bottom right"),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
