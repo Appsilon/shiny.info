@@ -4,15 +4,25 @@
 #'
 #' @return div which wraps your message to display it in the top-right corner of your shiny app.
 #' @export
-display <- function(message) {
+#' @import glue
+display <- function(message, position = "top right") {
+  allowed_positions <- c("top right", "top left", "bottom right", "bottom left")
+  if (!position %in% allowed_positions)
+    error("Position argument not allowed.")
+  splitted_position <- unlist(strsplit(position, " "))
+  position_vertical <- splitted_position[1]
+  position_horizontal <- splitted_position[2]
   tagList(
     tags$head(
       tags$style(
-        HTML("
+        HTML(paste0(
+        "
         #shinyinfo {
-        position: absolute;
-        top: 0;
-        right: 0;
+        position: fixed;
+        ",
+        glue::glue("{position_vertical}: 0;
+        {position_horizontal}: 0;"),
+        "
         width: auto;
         height: auto;
         color: #000000;
@@ -24,7 +34,7 @@ display <- function(message) {
         #shinyinfo a {
         color: #0099f9;
         }
-        ")
+        "))
       )
     ),
     div(id = "shinyinfo", message)
@@ -42,6 +52,6 @@ display <- function(message) {
 #' @return div with "powered by".
 #' @export
 #' @importFrom shiny a p
-powered_by <- function(company_name, link="#") {
-  display(p("Powered by ", a(href = link, target="_blank", company_name)))
+powered_by <- function(company_name, link="#", position = "top right") {
+  display(p("Powered by ", a(href = link, target="_blank", company_name)), position)
 }

@@ -2,7 +2,6 @@
 
 export(busy)
 export(display)
-export(git_info)
 export(version)
 import(git2r)
 import(shiny)
