@@ -2,6 +2,9 @@
 
 export(busy)
 export(display)
+export(powered_by)
 export(version)
-import(git2r)
+import(glue)
 import(shiny)
+importFrom(shiny,a)
+importFrom(shiny,p)

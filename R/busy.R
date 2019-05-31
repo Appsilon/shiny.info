@@ -91,6 +91,7 @@ transform: translate(19px, 0);
 #' List needs to have structure \code{loader <- list(css<-"CSS CODE", html <- div("CODE TO DISPLAY"))}.
 #'
 #' @return shiny tag List with js script, style of spinner and display div
+#' @import shiny
 #' @export
 busy <- function(loader = "dots") {
   if (class(loader) == "character")

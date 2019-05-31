@@ -15,26 +15,26 @@ display <- function(message, position = "top right") {
   tagList(
     tags$head(
       tags$style(
-        HTML(paste0(
-        "
-        #shinyinfo {
-        position: fixed;
-        ",
-        glue::glue("{position_vertical}: 0;
-        {position_horizontal}: 0;"),
-        "
-        width: auto;
-        height: auto;
-        color: #000000;
-        background-color: #f5f5f5;
-        padding: 3px 8px;
-        font-size: 12px;
-        z-index : 9999;
-        }
-        #shinyinfo a {
-        color: #0099f9;
-        }
-        "))
+        HTML(
+          glue::glue(
+            "
+            #shinyinfo {{
+              position: fixed;
+              {position_vertical}: 0;
+              {position_horizontal}: 0;
+              width: auto;
+              height: auto;
+              color: #000000;
+              background-color: #f5f5f5;
+              padding: 3px 8px;
+              font-size: 12px;
+              z-index : 9999;
+            }}
+            #shinyinfo a {{
+              color: #0099f9;
+            }}
+            ")
+          )
       )
     ),
     div(id = "shinyinfo", message)
