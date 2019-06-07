@@ -2,11 +2,13 @@
 #' 
 #' Displays git information from the repository of the current working space.
 #' 
+#' @param position character with position of the parameter. Default "top right".
+#'
 #' @import git2r
 #' @import shiny
 #' @import glue
 #' @export
-git_info <- function() {
+git_info <- function(position = "top right") {
   repo <- tryCatch({
             repository(".")
           }, error = function(e) {
@@ -30,5 +32,5 @@ git_info <- function() {
                       )
     }
   }
-  display(git_message)
+  display(git_message, position)
 }

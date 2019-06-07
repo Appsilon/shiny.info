@@ -2,9 +2,9 @@
 
 export(busy)
 export(display)
+export(git_info)
 export(powered_by)
 export(version)
-export(git_info)
 import(git2r)
 import(glue)
 import(shiny)
