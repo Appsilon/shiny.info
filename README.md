@@ -4,7 +4,7 @@
 shiny.info
 ==========
 
-Display simple diagnostic info of your Shiny app corner.
+Display simple diagnostic info of your Shiny app in any of its corners.
 
 What can be displayed there?
 
