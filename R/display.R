@@ -1,6 +1,7 @@
 #' Display message on the top-right corner
 #'
 #' @param message character with any message you want
+#' @param position character with position of the parameter. Default "top right".
 #'
 #' @return div which wraps your message to display it in the top-right corner of your shiny app.
 #' @export
@@ -48,6 +49,7 @@ display <- function(message, position = "top right") {
 #'
 #' @param company_name character with the creator of the app
 #' @param link link to the creator's website
+#' @param position character with position of the parameter. Default "top right".
 #'
 #' @return div with "powered by".
 #' @export

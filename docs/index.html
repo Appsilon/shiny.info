@@ -191,7 +191,7 @@ $(document).ready(function () {
 <div id="shiny.info" class="section level1">
 <h1>shiny.info</h1>
 <div class="subheader">
-<p>Display simple diagnostic info of your Shiny app in top-right corner.</p>
+<p>Display simple diagnostic info of your Shiny app in any of its corners.</p>
 </div>
 <div class="section level2">
 <p>What can be displayed there?</p>
@@ -201,12 +201,9 @@ $(document).ready(function () {
 <li>Last data import date</li>
 <li>… anything else you find useful for your development</li>
 </ul>
-<h3 id="future-work">Future work</h3>
-<ul>
-<li>Different UI styles, e.g. adjusted to Shiny Server Pro with authentication box.</li>
-<li>Info box hidden by default, displayed on key press.</li>
-<li>Diagnostic info about app idle/busy status.</li>
-</ul>
+<h2 id="how-to-install">How to install?</h2>
+<p>The most recent version you can get from this repo using <a href="https://github.com/hadley/devtools">devtools</a>.</p>
+<pre><code>devtools::install_github(&quot;Appsilon/shiny.info&quot;)</code></pre>
 <h3 id="example">Example</h3>
 <p>Diagnostic info like app version can be displayed with function <code>display()</code>: <code>shiny.info::display(&quot;My App Version&quot;)</code>. See top right corner here:</p>
 <div class="figure">
@@ -259,6 +256,12 @@ shinyApp(
 
   }
 )</code></pre>
+<h3 id="future-work">Future work</h3>
+<ul>
+<li>Different UI styles, e.g. adjusted to Shiny Server Pro with authentication box.</li>
+<li>Info box hidden by default, displayed on key press.</li>
+<li>Diagnostic info about app idle/busy status.</li>
+</ul>
 </div>
 </div>
 

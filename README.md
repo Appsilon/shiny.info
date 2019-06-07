@@ -4,7 +4,7 @@
 shiny.info
 ==========
 
-Display simple diagnostic info of your Shiny app in top-right corner.
+Display simple diagnostic info of your Shiny app in any of its corners.
 
 What can be displayed there?
 
@@ -13,11 +13,12 @@ What can be displayed there?
 -   Last data import date
 -   ... anything else you find useful for your development
 
-### Future work
+How to install?
+---------------
 
--   Different UI styles, e.g. adjusted to Shiny Server Pro with authentication box.
--   Info box hidden by default, displayed on key press.
--   Diagnostic info about app idle/busy status.
+The most recent version you can get from this repo using [devtools](https://github.com/hadley/devtools).
+
+    devtools::install_github("Appsilon/shiny.info")
 
 ### Example
 
@@ -72,3 +73,9 @@ Diagnostic info like app version can be displayed with function `display()`: `sh
 
       }
     )
+
+### Future work
+
+-   Different UI styles, e.g. adjusted to Shiny Server Pro with authentication box.
+-   Info box hidden by default, displayed on key press.
+-   Diagnostic info about app idle/busy status.
