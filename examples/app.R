@@ -5,7 +5,7 @@ VERSION = "1.2.2"
 
 shinyApp(
   ui = tagList(
-    shiny.info::git_info(position = "bottom left"),
+    shiny.info::busy(position="top left"),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(

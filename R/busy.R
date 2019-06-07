@@ -89,11 +89,12 @@ transform: translate(19px, 0);
 #' @param loader character or list. If character given, then it selects from one of a few
 #' available loaders (look Description for more). By using list you can create your custom loder.
 #' List needs to have structure \code{loader <- list(css<-"CSS CODE", html <- div("CODE TO DISPLAY"))}.
+#' @param position character with position of the parameter. Default "top right".
 #'
 #' @return shiny tag List with js script, style of spinner and display div
 #' @import shiny
 #' @export
-busy <- function(loader = "dots") {
+busy <- function(loader = "dots", position = "top right") {
   if (class(loader) == "character")
     loader <- eval(parse(text = paste0(".loader_", loader)))
   shiny::tagList(
@@ -116,7 +117,8 @@ busy <- function(loader = "dots") {
             tags$span(tags$h4("Busy...")),
             loader$html,
             tags$script('$("#loading").hide()')
-      )
+      ),
+      position
     )
   )
 }
