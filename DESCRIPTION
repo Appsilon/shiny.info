@@ -10,3 +10,7 @@ Encoding: UTF-8
 RoxygenNote: 6.1.1
 Imports:
     git2r (>= 0.22.1)
+Suggests:
+    testthat,
+    lintr,
+    covr
