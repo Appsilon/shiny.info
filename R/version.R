@@ -9,7 +9,7 @@
 #'
 #' @examples
 version <- function(ver = NULL, position = "top right") {
-  if(exists("VERSION", envir = parent.frame()))
+  if (exists("VERSION", envir = parent.frame()))
     ver <- get("VERSION", envir = parent.frame())
   display(ver, position)
 }

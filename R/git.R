@@ -11,7 +11,8 @@
 git_info <- function(position = "top right") {
   repo <- tryCatch({
             repository(".")
-          }, error = function(e) {
+          },
+          error = function(e) {
              NULL
           })
   if (is.null(repo)) {
@@ -21,7 +22,7 @@ git_info <- function(position = "top right") {
     if (is.null(branch)) {
       git_message <- "Empty repo."
     } else {
-      last_commit <- as.character(commits(repo)[[1]]$message)
+      last_commit <- as.character(commits(repo)[[1]]$message) #nolint
       stat <- status(repo)
       changes <- ""
       if (length(stat$unstaged$modified) + length(stat$staged$modified) > 0)

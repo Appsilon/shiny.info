@@ -3,8 +3,8 @@
 .loader_spinner$css <- "
 #spinner {
 display: inline-block;
-border: 3px solid #f3f3f3; 
-border-top: 3px solid #3498db; 
+border: 3px solid #f3f3f3;
+border-top: 3px solid #3498db;
 border-radius: 50%;
 width: 40px;
 height: 40px;
@@ -76,7 +76,9 @@ transform: translate(19px, 0);
 }
 }
 "
-.loader_dots$html <- tags$div(class="lds-ellipsis", tags$div(),tags$div(),tags$div(),tags$div())
+.loader_dots$html <- tags$div(class = "lds-ellipsis",
+                              tags$div(), tags$div(), tags$div(), tags$div()
+                              )
 
 #' Busy or not
 #' 
@@ -106,9 +108,9 @@ busy <- function(loader = "dots", position = "top right") {
         } else {
          $("#loading").hide()
         }
-      }; 
+      };
       setInterval(checkifrunning, 50)'
-    ), 
+    ),
     tags$style(
       loader$css
     ),
