@@ -9,7 +9,7 @@
 display <- function(message, position = "top right") {
   allowed_positions <- c("top right", "top left", "bottom right", "bottom left")
   if (!position %in% allowed_positions)
-    error("Position argument not allowed.")
+    stop("Position argument not allowed.")
   splitted_position <- unlist(strsplit(position, " "))
   position_vertical <- splitted_position[1] #nolint
   position_horizontal <- splitted_position[2] #nolint

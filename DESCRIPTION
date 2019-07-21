@@ -9,7 +9,9 @@ BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 Imports:
-    git2r (>= 0.22.1)
+    git2r (>= 0.22.1),
+    glue,
+    shiny
 Suggests:
     testthat,
     lintr,
