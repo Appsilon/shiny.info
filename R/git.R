@@ -4,7 +4,7 @@
 #' 
 #' @param position character with position of the parameter. Default "top right".
 #'
-#' @import git2r
+#' @importFrom git2r repository repository_head commits status
 #' @import shiny
 #' @import glue
 #' @export
