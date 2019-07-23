@@ -3,13 +3,15 @@ Type: Package
 Version: 0.1
 Authors@R: c(person("Paweł", "Przytuła", email = "pawel@appsilon.com", role = c("aut", "cre")))
 Title: Shiny Info
-Description: Display simple diagnostic info of your Shiny app
+Description: Displays simple diagnostic information of your Shiny project in the app.
 License: MIT + file LICENSE
 BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8
 RoxygenNote: 6.1.1
 Imports:
-    git2r (>= 0.22.1)
+    git2r (>= 0.22.1),
+    glue,
+    shiny
 Suggests:
     testthat,
     lintr,

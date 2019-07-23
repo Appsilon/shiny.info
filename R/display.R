@@ -9,11 +9,11 @@
 display <- function(message, position = "top right") {
   allowed_positions <- c("top right", "top left", "bottom right", "bottom left")
   if (!position %in% allowed_positions)
-    error("Position argument not allowed.")
+    stop("Position argument not allowed.")
   splitted_position <- unlist(strsplit(position, " "))
-  position_vertical <- splitted_position[1]
-  position_horizontal <- splitted_position[2]
-  tagList(
+  position_vertical <- splitted_position[1] #nolint
+  position_horizontal <- splitted_position[2] #nolint
+  tagList( #nolint
     tags$head(
       tags$style(
         HTML(
@@ -55,5 +55,7 @@ display <- function(message, position = "top right") {
 #' @export
 #' @importFrom shiny a p
 powered_by <- function(company_name, link="#", position = "top right") {
-  display(p("Powered by ", a(href = link, target="_blank", company_name)), position)
+  display(p("Powered by ",
+            a(href = link, target = "_blank", company_name)),
+          position)
 }

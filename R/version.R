@@ -8,8 +8,10 @@
 #' @export
 #'
 #' @examples
+#' version() # if VERSION global variable exists
+#' version("1.2.1") # with custom version number
 version <- function(ver = NULL, position = "top right") {
-  if(exists("VERSION", envir = parent.frame()))
+  if (exists("VERSION", envir = parent.frame()))
     ver <- get("VERSION", envir = parent.frame())
   display(ver, position)
 }
