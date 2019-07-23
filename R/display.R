@@ -4,17 +4,25 @@
 #' @param position character with position of the parameter. Default "top right".
 #' @param type character with display type to specify the id. Default to "message"
 #'
-#' @return div which wraps your message to display it in the top-right corner of your shiny app.
+#' @return div which wraps your message to display it in the {position} corner of your shiny app.
 #' @export
 #' @import glue
 display <- function(message, position = "top right", type = "message") {
   allowed_positions <- c("top right", "top left", "bottom right", "bottom left")
   if (!position %in% allowed_positions)
     stop("Position argument not allowed.")
+  fixed_layout <- "fixed"
+  # when called from inside infoPanel function position arguments are supposed to be overwritten
+  # and css position should be empty
+  if(isTRUE(any(grepl("infoPanel", sys.call(-8))))) {
+    position <- get_args()$position
+    fixed_layout <- ""
+  }
   splitted_position <- unlist(strsplit(position, " "))
   position_vertical <- splitted_position[1] #nolint
   position_horizontal <- splitted_position[2] #nolint
   type_id <- paste0("shinyinfo_", type)
+
   tagList( #nolint
     tags$head(
       tags$style(
@@ -22,7 +30,7 @@ display <- function(message, position = "top right", type = "message") {
           glue::glue(
             "
             #{type_id} {{
-              position: fixed;
+              position: {fixed_layout};
               {position_vertical}: 0;
               {position_horizontal}: 0;
               width: auto;
@@ -58,4 +66,18 @@ display <- function(message, position = "top right", type = "message") {
 #' @importFrom shiny a p
 powered_by <- function(company_name, link="#", position = "top right") {
   display(p("Powered by ", a(href = link, target="_blank", company_name)), position, type = "powered_by")
+}
+
+
+#' Auxiliary function that returns list of arguments for parent calling function
+#' See for details: https://stackoverflow.com/questions/17256834/getting-the-arguments-of-a-parent-function-in-r-with-names
+#'
+#' @param depth negative numeric; how layers above to check the arguments
+#'
+#' @return list of function arguments
+get_args <- function(depth = -9) {
+  cl <- sys.call(depth)
+  f <- get(as.character(cl[[1]]), mode = "function", sys.frame(-2))
+  cl <- match.call(definition = f, call = cl)
+  as.list(cl)[-1]
 }
