@@ -6,8 +6,6 @@
 #' @param position character with position of the parameter. Default "top right".
 #'
 #' @export
-#'
-#' @examples
 version <- function(ver = NULL, position = "top right") {
   if(exists("VERSION", envir = parent.frame()))
     ver <- get("VERSION", envir = parent.frame())
