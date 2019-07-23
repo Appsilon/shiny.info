@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-version <- function(ver = "nic", position = "top right") {
+version <- function(ver = NULL, position = "top right") {
   if(exists("VERSION", envir = parent.frame()))
     ver <- get("VERSION", envir = parent.frame())
   display(ver, position, type = "version")
