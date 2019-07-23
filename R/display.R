@@ -2,24 +2,26 @@
 #'
 #' @param message character with any message you want
 #' @param position character with position of the parameter. Default "top right".
+#' @param type character with display type to specify the id. Default to "message"
 #'
 #' @return div which wraps your message to display it in the top-right corner of your shiny app.
 #' @export
 #' @import glue
-display <- function(message, position = "top right") {
+display <- function(message, position = "top right", type = "message") {
   allowed_positions <- c("top right", "top left", "bottom right", "bottom left")
   if (!position %in% allowed_positions)
     stop("Position argument not allowed.")
   splitted_position <- unlist(strsplit(position, " "))
   position_vertical <- splitted_position[1] #nolint
   position_horizontal <- splitted_position[2] #nolint
+  random_id <- paste0("shinyinfo", type)
   tagList( #nolint
     tags$head(
       tags$style(
         HTML(
           glue::glue(
             "
-            #shinyinfo {{
+            #{random_id} {{
               position: fixed;
               {position_vertical}: 0;
               {position_horizontal}: 0;
@@ -31,20 +33,20 @@ display <- function(message, position = "top right") {
               font-size: 12px;
               z-index : 9999;
             }}
-            #shinyinfo a {{
+            #{random_id} a {{
               color: #0099f9;
             }}
             ")
           )
       )
     ),
-    div(id = "shinyinfo", message)
+    div(id = random_id, message)
   )
 }
 
 
 #' Powered by
-#' 
+#'
 #' Displays information about authors of the shiny app.
 #'
 #' @param company_name character with the creator of the app
@@ -55,7 +57,5 @@ display <- function(message, position = "top right") {
 #' @export
 #' @importFrom shiny a p
 powered_by <- function(company_name, link="#", position = "top right") {
-  display(p("Powered by ",
-            a(href = link, target = "_blank", company_name)),
-          position)
+  display(p("Powered by ", a(href = link, target="_blank", company_name)), position, type = "powered_by")
 }

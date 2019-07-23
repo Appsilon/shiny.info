@@ -81,11 +81,11 @@ transform: translate(19px, 0);
                               )
 
 #' Busy or not
-#' 
+#'
 #' Displays a spinner indicating if there are any calculations running on the server side.
-#' 
+#'
 #' Currently available loaders: dots, spinner.
-#' 
+#'
 #' Solution inspired by: \url{https://colinfay.me/watch-r-shiny/}.
 #'
 #' @param loader character or list. If character given, then it selects from one of a few
@@ -120,7 +120,8 @@ busy <- function(loader = "dots", position = "top right") {
             loader$html,
             tags$script('$("#loading").hide()')
       ),
-      position
+      position,
+      type = "busy"
     )
   )
 }
