@@ -14,7 +14,7 @@ display <- function(message, position = "top right", type = "message") {
   splitted_position <- unlist(strsplit(position, " "))
   position_vertical <- splitted_position[1]
   position_horizontal <- splitted_position[2]
-  type_id <- paste0("shinyinfo", type)
+  type_id <- paste0("shinyinfo_", type)
   tagList(
     tags$head(
       tags$style(
