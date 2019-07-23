@@ -14,3 +14,7 @@ version(ver = NULL, position = "top right")
 \description{
 Displays the version of the app by default using VERSION global variable.
 }
+\examples{
+version() # if VERSION global variable exists
+version("1.2.1") # with custom version number
+}

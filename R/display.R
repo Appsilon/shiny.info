@@ -65,7 +65,10 @@ display <- function(message, position = "top right", type = "message") {
 #' @export
 #' @importFrom shiny a p
 powered_by <- function(company_name, link="#", position = "top right") {
-  display(p("Powered by ", a(href = link, target="_blank", company_name)), position, type = "powered_by")
+  display(p("Powered by ",
+            a(href = link, target = "_blank", company_name)),
+          position,
+          type = "powered_by")
 }
 
 
