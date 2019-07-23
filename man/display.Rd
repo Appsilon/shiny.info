@@ -4,15 +4,17 @@
 \alias{display}
 \title{Display message on the top-right corner}
 \usage{
-display(message, position = "top right")
+display(message, position = "top right", type = "message")
 }
 \arguments{
 \item{message}{character with any message you want}
 
 \item{position}{character with position of the parameter. Default "top right".}
+
+\item{type}{character with display type to specify the id. Default to "message"}
 }
 \value{
-div which wraps your message to display it in the top-right corner of your shiny app.
+div which wraps your message to display it in the {position} corner of your shiny app.
 }
 \description{
 Display message on the top-right corner

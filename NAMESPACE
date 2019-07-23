@@ -3,6 +3,7 @@
 export(busy)
 export(display)
 export(git_info)
+export(infoPanel)
 export(powered_by)
 export(version)
 import(glue)

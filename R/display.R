@@ -72,12 +72,12 @@ powered_by <- function(company_name, link="#", position = "top right") {
 #' Auxiliary function that returns list of arguments for parent calling function
 #' See for details: https://stackoverflow.com/questions/17256834/getting-the-arguments-of-a-parent-function-in-r-with-names
 #'
+#' @param fun string; for what function to look for
 #' @param depth negative numeric; how layers above to check the arguments
 #'
 #' @return list of function arguments
-get_args <- function(depth = -9) {
+get_args <- function(fun = "infoPanel", depth = -9) {
   cl <- sys.call(depth)
-  f <- get(as.character(cl[[1]]), mode = "function", sys.frame(-2))
-  cl <- match.call(definition = f, call = cl)
+  cl <- match.call(definition = eval(parse(text = fun)), call = cl)
   as.list(cl)[-1]
 }
