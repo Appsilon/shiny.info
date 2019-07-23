@@ -1,7 +1,7 @@
 #' Git information
-#' 
+#'
 #' Displays git information from the repository of the current working space.
-#' 
+#'
 #' @param position character with position of the parameter. Default "top right".
 #'
 #' @import git2r
@@ -32,5 +32,5 @@ git_info <- function(position = "top right") {
                       )
     }
   }
-  display(git_message, position)
+  display(git_message, position, type = "git_info")
 }

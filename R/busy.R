@@ -3,8 +3,8 @@
 .loader_spinner$css <- "
 #spinner {
 display: inline-block;
-border: 3px solid #f3f3f3; 
-border-top: 3px solid #3498db; 
+border: 3px solid #f3f3f3;
+border-top: 3px solid #3498db;
 border-radius: 50%;
 width: 40px;
 height: 40px;
@@ -79,11 +79,11 @@ transform: translate(19px, 0);
 .loader_dots$html <- tags$div(class="lds-ellipsis", tags$div(),tags$div(),tags$div(),tags$div())
 
 #' Busy or not
-#' 
+#'
 #' Displays a spinner indicating if there are any calculations running on the server side.
-#' 
+#'
 #' Currently available loaders: dots, spinner.
-#' 
+#'
 #' Solution inspired by: \url{https://colinfay.me/watch-r-shiny/}.
 #'
 #' @param loader character or list. If character given, then it selects from one of a few
@@ -106,9 +106,9 @@ busy <- function(loader = "dots", position = "top right") {
         } else {
          $("#loading").hide()
         }
-      }; 
+      };
       setInterval(checkifrunning, 50)'
-    ), 
+    ),
     tags$style(
       loader$css
     ),
@@ -118,7 +118,8 @@ busy <- function(loader = "dots", position = "top right") {
             loader$html,
             tags$script('$("#loading").hide()')
       ),
-      position
+      position,
+      type = "busy"
     )
   )
 }
