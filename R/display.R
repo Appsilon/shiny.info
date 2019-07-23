@@ -14,14 +14,14 @@ display <- function(message, position = "top right", type = "message") {
   splitted_position <- unlist(strsplit(position, " "))
   position_vertical <- splitted_position[1] #nolint
   position_horizontal <- splitted_position[2] #nolint
-  random_id <- paste0("shinyinfo", type)
+  type_id <- paste0("shinyinfo", type)
   tagList( #nolint
     tags$head(
       tags$style(
         HTML(
           glue::glue(
             "
-            #{random_id} {{
+            #{type_id} {{
               position: fixed;
               {position_vertical}: 0;
               {position_horizontal}: 0;
@@ -33,14 +33,14 @@ display <- function(message, position = "top right", type = "message") {
               font-size: 12px;
               z-index : 9999;
             }}
-            #{random_id} a {{
+            #{type_id} a {{
               color: #0099f9;
             }}
             ")
           )
       )
     ),
-    div(id = random_id, message)
+    div(id = type_id, message)
   )
 }
 
