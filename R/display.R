@@ -27,28 +27,29 @@ display <- function(message, position = "top right", type = "message") {
     tags$head(
       tags$style(
         HTML(
+          "
+          .info_box {
+            width: auto;
+            height: auto;
+            color: #000000;
+            background-color: #f5f5f5;
+            padding: 3px 8px;
+            font-size: 12px;
+            z-index : 9999;
+          }
+          ",
           glue::glue(
             "
             #{type_id} {{
               position: {fixed_layout};
               {position_vertical}: 0;
               {position_horizontal}: 0;
-              width: auto;
-              height: auto;
-              color: #000000;
-              background-color: #f5f5f5;
-              padding: 3px 8px;
-              font-size: 12px;
-              z-index : 9999;
-            }}
-            #{type_id} a {{
-              color: #0099f9;
             }}
             ")
           )
       )
     ),
-    div(id = type_id, message)
+    div(id = type_id, class = "info_box", message)
   )
 }
 
