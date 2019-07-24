@@ -17,5 +17,5 @@ info_panel <- function(..., position = "top right") {
 #' @return div which wraps your all info boxes to display it in the {position} corner of your shiny app.
 #' @export
 infoPanel <- function(..., position = "top right") {
- info_panel(..., position = position) 
+ info_panel(..., position = position)
 }
