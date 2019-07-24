@@ -14,7 +14,7 @@ display <- function(message, position = "top right", type = "message") {
   fixed_layout <- "fixed"
   # when called from inside infoPanel function position arguments are supposed to be overwritten
   # and css position should be empty
-  if(isTRUE(any(grepl("infoPanel", sys.call(-8))))) {
+  if (isTRUE(any(grepl("infoPanel", sys.call(-8))))) {
     position <- get_args()$position
     fixed_layout <- ""
   }
