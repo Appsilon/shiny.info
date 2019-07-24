@@ -12,7 +12,7 @@ info_panel(..., position = "top right")
 \item{position}{character with position of the parameter. Default "top right".}
 }
 \value{
-div which wraps your all info boxes to display it in the {position} corner of your shiny app.
+div which wraps your all info boxes to display it in the position corner of your shiny app.
 }
 \description{
 Creates a panel for all info boxes so they do not overlap
