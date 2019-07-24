@@ -5,10 +5,10 @@ VERSION = "1.2.2"
 
 shinyApp(
   ui = tagList(
-    shiny.info::infoPanel(
-      position = "bottom left",
+    shiny.info::info_panel(
       shiny.info::git_info(),
-      shiny.info::powered_by("Appsilon", link = "appsilon.com")
+      shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+      position = "bottom left"
     ),
     shiny.info::version(position = "top right"),
     pageWithSidebar(

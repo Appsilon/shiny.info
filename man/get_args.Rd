@@ -2,10 +2,9 @@
 % Please edit documentation in R/display.R
 \name{get_args}
 \alias{get_args}
-\title{Auxiliary function that returns list of arguments for parent calling function
-See for details: https://stackoverflow.com/questions/17256834/getting-the-arguments-of-a-parent-function-in-r-with-names}
+\title{Auxiliary function that returns list of arguments for parent calling function}
 \usage{
-get_args(fun = "infoPanel", depth = -9)
+get_args(fun, depth = -9)
 }
 \arguments{
 \item{fun}{string; for what function to look for}
@@ -17,5 +16,4 @@ list of function arguments
 }
 \description{
 Auxiliary function that returns list of arguments for parent calling function
-See for details: https://stackoverflow.com/questions/17256834/getting-the-arguments-of-a-parent-function-in-r-with-names
 }

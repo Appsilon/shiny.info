@@ -14,8 +14,8 @@ display <- function(message, position = "top right", type = "message") {
   fixed_layout <- "fixed"
   # when called from inside infoPanel function position arguments are supposed to be overwritten
   # and css position should be empty
-  if (isTRUE(any(grepl("infoPanel", sys.call(-8))))) {
-    position <- get_args()$position
+  if (isTRUE(any(grepl("infoPanel|info_panel", sys.call(-8))))) {
+    position <- get_args("info_panel")$position
     fixed_layout <- ""
   }
   splitted_position <- unlist(strsplit(position, " "))
@@ -64,7 +64,7 @@ display <- function(message, position = "top right", type = "message") {
 #' @return div with "powered by".
 #' @export
 #' @importFrom shiny a p
-powered_by <- function(company_name, link="#", position = "top right") {
+powered_by <- function(company_name, link = "#", position = "top right") {
   display(p("Powered by ",
             a(href = link, target = "_blank", company_name)),
           position,
@@ -78,7 +78,7 @@ powered_by <- function(company_name, link="#", position = "top right") {
 #' @param depth negative numeric; how layers above to check the arguments
 #'
 #' @return list of function arguments
-get_args <- function(fun = "infoPanel", depth = -9) {
+get_args <- function(fun, depth = -9) {
   cl <- sys.call(depth)
   cl <- match.call(definition = eval(parse(text = fun)), call = cl)
   as.list(cl)[-1]
