@@ -73,7 +73,6 @@ powered_by <- function(company_name, link="#", position = "top right") {
 
 
 #' Auxiliary function that returns list of arguments for parent calling function
-#' See for details: https://stackoverflow.com/questions/17256834/getting-the-arguments-of-a-parent-function-in-r-with-names
 #'
 #' @param fun string; for what function to look for
 #' @param depth negative numeric; how layers above to check the arguments
