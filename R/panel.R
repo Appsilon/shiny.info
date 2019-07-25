@@ -2,11 +2,11 @@
 #'
 #' @param ... calls with info elements
 #' @param position character with position of the parameter. Default "top right".
-#'
+#' @importFrom shiny tagList
 #' @return div which wraps your all info boxes to display it in the position corner of your shiny app.
 #' @export
 info_panel <- function(..., position = "top right") {
-  display(tagList(...), position = position, type = "info_panel") #nolint
+  display(tagList(...), position = position, type = "info_panel")
 }
 
 #' Wrapper for info_panel function
