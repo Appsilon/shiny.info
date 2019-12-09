@@ -17,7 +17,6 @@ display <- function(message, position = "top right", type = "message") {
   plausible_info_panel_call <- tryCatch(sys.call(-8), error = function(e) "")
   is_called_in_info_panel <- isTRUE(any(grepl("infoPanel|info_panel", plausible_info_panel_call)))
   if (is_called_in_info_panel) {
-    position <- get_args("info_panel")$position
     fixed_layout <- ""
   }
   splitted_position <- unlist(strsplit(position, " "))
