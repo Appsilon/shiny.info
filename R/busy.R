@@ -103,7 +103,7 @@ busy <- function(loader = "dots", position = "top right") {
     tags$script(
       'function checkifrunning() {
         var is_running = $("html").attr("class").includes("shiny-busy");
-        if (is_running){
+        if (is_running) {
          $("#loading").show()
         } else {
          $("#loading").hide()

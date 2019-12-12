@@ -6,7 +6,8 @@
 #' @return div which wraps your all info boxes to display it in the position corner of your shiny app.
 #' @export
 info_panel <- function(..., position = "top right") {
-  display(tagList(...), position = position, type = "info_panel")
+  elements <- lapply(list(...), display, position = position)
+  display(tagList(list = elements), position = position, type = "info_panel")
 }
 
 #' Wrapper for info_panel function
@@ -16,6 +17,6 @@ info_panel <- function(..., position = "top right") {
 #'
 #' @return div which wraps your all info boxes to display it in the position corner of your shiny app.
 #' @export
-infoPanel <- function(..., position = "top right") {
+infoPanel <- function(..., position = "top right") { #nolint
  info_panel(..., position = position)
 }
