@@ -4,14 +4,14 @@
 \alias{render_info_value}
 \title{Server render function for info value}
 \usage{
-output$test <- render_info_value("test value")
+output$test <- render_info_value(reactive_variable())
 }
 \arguments{
 \item{expr}{value to render}
 
-\item{env}{The environment in which to evaluate expr.}
+\item{env}{The environment in which to evaluate expr. Default parent.frame()}
 
-\item{quoted}{Is expr a quoted expression (with quote())? This is useful if you want to save an expression in a variable.}
+\item{quoted}{Is expr a quoted expression (with quote())? This is useful if you want to save an expression in a variable. Default FALSE}
 
 \item{sep}{A separator passed to cat to be appended after each element.}
 }
