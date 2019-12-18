@@ -16,8 +16,10 @@ info_value <- function(id, position = "top right") {
 #'
 #' @param expr value to render
 #' @param env The environment in which to evaluate expr. Default parent.frame()
-#' @param quoted Is expr a quoted expression (with quote())? This is useful if you want to save an expression in a variable. Default FALSE #nolint
+#' @param quoted Is expr a quoted expression (with quote())? This is useful if you want to save an
+#'  expression in a variable. Default FALSE
 #' @param sep A separator passed to cat to be appended after each element.
+#' @param add_name Should expression name be added. Default TRUE
 #'
 #' @return Shiny render function to be save as an element of output.
 #'
@@ -36,13 +38,20 @@ info_value <- function(id, position = "top right") {
 #' output$value_to_display <- render_info_value(expr = test_reactive())
 #' }
 #' @export
-render_info_value <- function(expr, env = parent.frame(), quoted = FALSE, sep = " ") {
+render_info_value <- function(expr, env = parent.frame(), quoted = FALSE, sep = " ", add_name = TRUE) {
+    expr_name <- deparse(substitute(expr))
+    if (add_name) {
+      expr_name <- paste0(deparse(substitute(expr)), " = ")
+    } else {
+      expr_name <- NULL
+    }
+
     installExprFunction(expr, "func", env, quoted)
 
     createRenderFunction(
       func,
       function(value, session, name, ...) {
-        paste(utils::capture.output(cat(value, sep = sep)), collapse = "\n")
+        paste0(expr_name, paste(utils::capture.output(cat(value, sep = sep)), collapse = "\n"))
       }
     )
 }
