@@ -24,7 +24,17 @@ info_value <- function(id, position = "top right") {
 #' @importFrom shiny installExprFunction
 #' @importFrom shiny createRenderFunction
 #'
-#' @usage output$test <- render_info_value(reactive_variable())
+#' @examples
+#' \dontrun{
+#' # ui
+#'
+#' info_value("value_to_display")
+#'
+#' # server
+#'
+#' test_reactive <- reactiveVal("some value")
+#' output$value_to_display <- render_info_value(expr = test_reactive())
+#' }
 #' @export
 render_info_value <- function(expr, env = parent.frame(), quoted = FALSE, sep = " ") {
     installExprFunction(expr, "func", env, quoted)

@@ -4,7 +4,8 @@
 \alias{render_info_value}
 \title{Server render function for info value}
 \usage{
-output$test <- render_info_value(reactive_variable())
+render_info_value(expr, env = parent.frame(), quoted = FALSE,
+  sep = " ")
 }
 \arguments{
 \item{expr}{value to render}
@@ -20,4 +21,16 @@ Shiny render function to be save as an element of output.
 }
 \description{
 Server render function for info value
+}
+\examples{
+\dontrun{
+# ui
+
+info_value("value_to_display")
+
+# server
+
+test_reactive <- reactiveVal("some value")
+output$value_to_display <- render_info_value(test_reactive())
+}
 }
