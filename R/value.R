@@ -16,7 +16,7 @@ info_value <- function(id, position = "top right") {
 #'
 #' @param expr value to render
 #' @param env The environment in which to evaluate expr. Default parent.frame()
-#' @param quoted Is expr a quoted expression (with quote())? This is useful if you want to save an expression in a variable. Default FALSE
+#' @param quoted Is expr a quoted expression (with quote())? This is useful if you want to save an expression in a variable. Default FALSE #nolint
 #' @param sep A separator passed to cat to be appended after each element.
 #'
 #' @return Shiny render function to be save as an element of output.
