@@ -11,6 +11,7 @@ shinyApp(
       position = "bottom left"
     ),
     shiny.info::version(position = "top right"),
+    shiny.info::info_value("test_info_value", position = "bottom right"),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
@@ -26,6 +27,9 @@ shinyApp(
     )
   ),
   server = function(input, output, session) {
+
+    #info value
+    output$test_info_value <- render_info_value(input$xcol)
 
     # Combine the selected variables into a new data frame
     selectedData <- reactive({
