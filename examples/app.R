@@ -12,7 +12,7 @@ shinyApp(
     ),
     shiny.info::version(position = "top right"),
     shiny.info::info_value("test_info_value", position = "bottom right"),
-    hide_script(),
+    toggle_info(),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
