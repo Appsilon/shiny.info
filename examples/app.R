@@ -1,6 +1,8 @@
 library(shiny)
 library(shiny.info)
 
+# to show info press Ctrl+Shift+K
+
 VERSION = "1.2.2"
 
 shinyApp(
@@ -12,7 +14,7 @@ shinyApp(
     ),
     shiny.info::version(position = "top right"),
     shiny.info::info_value("test_info_value", position = "bottom right"),
-    toggle_info(),
+    shiny.info::toggle_info(),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
