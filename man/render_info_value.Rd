@@ -25,6 +25,11 @@ Shiny render function to be save as an element of output.
 \description{
 Server render function for info value
 }
+\details{
+If you want to use it with toggle_info(),
+ you have to add outputOptions(output, [info value id], suspendWhenHidden = FALSE) to force
+ rendering when the value is hidden.
+}
 \examples{
 \dontrun{
 # ui
@@ -35,5 +40,7 @@ info_value("value_to_display")
 
 test_reactive <- reactiveVal("some value")
 output$value_to_display <- render_info_value(expr = test_reactive())
+ # next line is required to work with toggle_info()
+outputOptions(output, "value_to_display", suspendWhenHidden = FALSE)
 }
 }
