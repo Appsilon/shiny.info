@@ -16,6 +16,7 @@ shinyApp(
     shiny.info::version(position = "top right"),
     shiny.info::info_value("test_info_value", position = "bottom right"),
     shiny.info::toggle_info(),
+    shiny.info::toggle_info(hidden_on_start = FALSE),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
@@ -79,5 +80,13 @@ shinyApp(
     })
     
     shiny.info::inspect_btn_server(input)
+    
+    observe({
+      showModal(
+        modalDialog(
+          "Press Ctrl+Shift+K to toggle shiny.info panels!", footer = NULL, easyClose = TRUE
+        )
+      )
+    })
   }
 )
