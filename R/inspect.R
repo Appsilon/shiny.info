@@ -1,5 +1,5 @@
 #' Inspect button UI
-#' 
+#'
 #' Helps to easlily stop app at any moment for debugging or checking state.
 #'
 #' @param label label for debug button. Default "Inspect"
@@ -13,7 +13,7 @@ inspect_btn_ui <- function(label = "Inspect", position = "top right") {
 }
 
 #' Inspect button server
-#' 
+#'
 #' Helps to easlily stop app at any moment for debugging or checking state.
 #'
 #' @param input Shiny server input.
@@ -21,7 +21,7 @@ inspect_btn_ui <- function(label = "Inspect", position = "top right") {
 #' @return observeEvent for Inspect button
 #' @export
 inspect_btn_server <- function(input) {
-  observeEvent(input$shinyinfo_inspect_btn,{
+  observeEvent(input$shinyinfo_inspect_btn, {
     browser()
   })
 }
