@@ -10,6 +10,7 @@ shinyApp(
     shiny.info::info_panel(
       shiny.info::git_info(),
       shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+      shiny.info::inspect_btn_ui(),
       position = "bottom left"
     ),
     shiny.info::version(position = "top right"),
@@ -76,6 +77,7 @@ shinyApp(
            pch = 20, cex = 3)
       points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
     })
-
+    
+    shiny.info::inspect_btn_server(input)
   }
 )
