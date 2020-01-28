@@ -81,7 +81,7 @@ toggle_info <- function(shortcut = "Ctrl+Shift+K", hidden_on_start = TRUE) {
   } else {
     hide <- ""
   }
-  
+
   js <- glue::glue("
   {hide}
 
