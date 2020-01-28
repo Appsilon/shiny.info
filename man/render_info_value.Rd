@@ -20,7 +20,7 @@ expression in a variable. Default FALSE}
 \item{add_name}{Should expression name be added. Default TRUE}
 }
 \value{
-Shiny render function to be save as an element of output.
+Shiny render function to be saved as an element of output.
 }
 \description{
 Server render function for info value

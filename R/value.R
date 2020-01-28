@@ -9,7 +9,8 @@
 #' @export
 #'
 info_value <- function(id, position = "top right") {
-  display(div(id = id, class = "shiny-text-output"), position = position, type = "value")
+  type = paste0("value-", sample(1:1000000, 1))
+  display(div(id = id, class = "shiny-html-output"), position = position, type = type)
 }
 
 #' Server render function for info value
@@ -25,7 +26,7 @@ info_value <- function(id, position = "top right") {
 #'  you have to add outputOptions(output, [info value id], suspendWhenHidden = FALSE) to force
 #'  rendering when the value is hidden.
 #'
-#' @return Shiny render function to be save as an element of output.
+#' @return Shiny render function to be saved as an element of output.
 #'
 #' @importFrom shiny installExprFunction
 #' @importFrom shiny createRenderFunction

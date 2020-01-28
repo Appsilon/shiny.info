@@ -4,11 +4,13 @@
 \alias{toggle_info}
 \title{Toggle showing info with keyboard shortcut}
 \usage{
-toggle_info(shortcut = "Ctrl+Shift+K")
+toggle_info(shortcut = "Ctrl+Shift+K", hidden_on_start = TRUE)
 }
 \arguments{
 \item{shortcut}{keys that trigger showing info. Shortcut can include special keys:
 Ctrl, Alt, Shift. Keys should be separated with '+' sign. Default Ctrl+Shift+K}
+
+\item{hidden_on_start}{should info panels be hidden on start of the application? Default TRUE.}
 }
 \value{
 JS script that adds toggle functionality.
