@@ -10,11 +10,13 @@ shinyApp(
     shiny.info::info_panel(
       shiny.info::git_info(),
       shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+      shiny.info::inspect_btn_ui(),
       position = "bottom left"
     ),
     shiny.info::version(position = "top right"),
     shiny.info::info_value("test_info_value", position = "bottom right"),
     shiny.info::toggle_info(),
+    shiny.info::toggle_info(hidden_on_start = FALSE),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
       sidebarPanel(
@@ -76,6 +78,15 @@ shinyApp(
            pch = 20, cex = 3)
       points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
     })
-
+    
+    shiny.info::inspect_btn_server(input)
+    
+    observe({
+      showModal(
+        modalDialog(
+          "Press Ctrl+Shift+K to toggle shiny.info panels!", footer = NULL, easyClose = TRUE
+        )
+      )
+    })
   }
 )

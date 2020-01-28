@@ -39,6 +39,7 @@
 #'
 #' @param shortcut keys that trigger showing info. Shortcut can include special keys:
 #'  Ctrl, Alt, Shift. Keys should be separated with '+' sign. Default Ctrl+Shift+K
+#' @param hidden_on_start should info panels be hidden on start of the application? Default TRUE.
 #'
 #' @details toggle_info() should be added in the header of the application in ui.R,
 #'  since it adds a script with toggle functionality. If you want to use it with info_value,
@@ -68,15 +69,21 @@
 #' }
 #' @export
 #' @import glue
-toggle_info <- function(shortcut = "Ctrl+Shift+K") {
+toggle_info <- function(shortcut = "Ctrl+Shift+K", hidden_on_start = TRUE) {
   shortcut_condition <- .shortcut_condition(shortcut)
 
-  js <- glue::glue("
-  $(document).ready(
+  if (hidden_on_start) {
+    hide <- "$(document).ready(
     function() {{
       $('div.info_box').hide();
     }}
-  );
+  );"
+  } else {
+    hide <- ""
+  }
+
+  js <- glue::glue("
+  {hide}
 
   $(document).on('keydown', function(e) {{
     if({shortcut_condition}) {{
