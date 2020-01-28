@@ -30,24 +30,24 @@ render_session_info <- function() {
     {isolate(session$clientData$url_hostname)}:
     {isolate(session$clientData$url_port)}"
   )
-  
+
   user <- glue::glue(
     "user: {isolate(session$user)}"
   )
-  
+
   pixel_ratio_value <- isolate(session$clientData$pixelratio)
   pixel_ratio_value <- switch(pixel_ratio_value,
     "1" = "not provided",
     "2" = "not provided, Apple Retina",
     pixel_ratio_value
   )
-  
+
   pixel_ratio <- glue::glue(
     "pixel ratio: {pixel_ratio_value}"
   )
-  
+
   installExprFunction(url, "func", parent.frame(), FALSE)
-  
+
   createRenderFunction(
     func,
     function(value, session, name, ...) {
