@@ -20,7 +20,7 @@ git_info <- function(position = "top right") {
   } else {
     branch <- repository_head(repo)[[1]]
     if (is.null(branch)) {
-      git_message <- "Empty repo."
+      git_message <- 'Empty repo.'
     } else {
       last_commit <- as.character(commits(repo)[[1]]$message) #nolint
       stat <- status(repo)

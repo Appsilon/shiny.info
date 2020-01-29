@@ -55,7 +55,7 @@ jobs:
         run: Rscript -e "library(remotes)" -e "update(readRDS('depends.Rds'))" -e "remotes::install_cran('rcmdcheck')"
 
       - name: Check
-        run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error', check_dir = 'check')"
+        run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'warning', check_dir = 'check')"
 
       - name: Upload check results
         if: failure()

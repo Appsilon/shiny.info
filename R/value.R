@@ -12,7 +12,7 @@ info_value <- function(id, position = "top right") {
   type <- paste0("value-", sample(1:1000000, 1))
   display(div(id = id, class = "shiny-html-output"), position = position, type = type)
 }
-
+ 
 #' Server render function for info value
 #'
 #' @param expr value to render
