@@ -1,7 +1,7 @@
 library(shiny)
 library(shiny.info)
 
-# to show info press Ctrl+Shift+K
+# to toggle info press Ctrl+Shift+K
 
 VERSION = "1.2.2"
 
@@ -15,7 +15,7 @@ shinyApp(
     ),
     shiny.info::version(position = "top right"),
     shiny.info::info_value("test_info_value", position = "bottom right"),
-    shiny.info::toggle_info(),
+    shiny.info::info_value("session_info_value", position = "top left"),
     shiny.info::toggle_info(hidden_on_start = FALSE),
     pageWithSidebar(
       headerPanel('Iris k-means clustering'),
@@ -34,8 +34,11 @@ shinyApp(
   server = function(input, output, session) {
     
     #info value
-    output$test_info_value <- render_info_value(input$xcol)
+    output$test_info_value <- shiny.info::render_info_value(input$xcol)
     outputOptions(output, "test_info_value", suspendWhenHidden = FALSE)
+
+    output$session_info_value <- shiny.info::render_session_info()
+    outputOptions(output, "session_info_value", suspendWhenHidden = FALSE)
     # Combine the selected variables into a new data frame
     selectedData <- reactive({
       iris[, c(input$xcol, input$ycol)]
