@@ -1,6 +1,8 @@
 
 <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css"> <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
+[![Codecov test coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/shiny.info?branch=master)
+
 shiny.info
 ==========
 
