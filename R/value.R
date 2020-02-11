@@ -1,3 +1,5 @@
+utils::globalVariables('func')
+
 #' UI output for info value
 #'
 #' @param id output id to render
