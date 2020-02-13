@@ -1,4 +1,4 @@
-utils::globalVariables('func')
+utils::globalVariables("func")
 
 #' UI output for info value
 #'
