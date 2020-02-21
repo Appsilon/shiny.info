@@ -1,7 +1,7 @@
 #' Display message on the top-right corner
-#' 
+#'
 #' @note You can disable shiny.info by setting options(shiny.info = FALSE).
-#' 
+#'
 #' @param message character with any message you want
 #' @param position character with position of the parameter. Default "top right".
 #' @param type character with display type to specify the id. Default to "message"
