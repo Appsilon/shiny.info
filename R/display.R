@@ -1,5 +1,7 @@
 #' Display message on the top-right corner
-#'
+#' 
+#' @note You can disable shiny.info by setting options(shiny.info = FALSE).
+#' 
 #' @param message character with any message you want
 #' @param position character with position of the parameter. Default "top right".
 #' @param type character with display type to specify the id. Default to "message"
@@ -8,6 +10,9 @@
 #' @export
 #' @import glue
 display <- function(message, position = "top right", type = "message") {
+  if (!is.null(options()$shiny.info) && options()$shiny.info == FALSE) {
+    return(NULL)
+  }
   allowed_positions <- c("top right", "top left", "bottom right", "bottom left")
   if (!position %in% allowed_positions)
     stop("Position argument not allowed.")
