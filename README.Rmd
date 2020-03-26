@@ -26,6 +26,7 @@ suppressWarnings(library(shiny.info))
 
 <div class="subheader">
 Display simple information of the 'shiny' project in the user interface of the app.
+</div>
 
 </br>
 
@@ -46,6 +47,12 @@ What can be displayed there?
 
 How to install?
 ---------------
+You can install shiny.info from CRAN repository:
+
+```
+install.packages("shiny.info")
+```
+
 
 The most recent version you can get from this repo using [devtools](https://github.com/hadley/devtools).
 
