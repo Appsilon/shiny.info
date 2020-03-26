@@ -8,6 +8,15 @@ params:
    repo_url: https://github.com/Appsilon/shiny.info
 ---
 
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "inst/assets/README_files"
+)
+suppressWarnings(library(shiny.info))
+```
+
 <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
 <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
@@ -17,6 +26,14 @@ params:
 <div class="subheader">
 Display simple diagnostic info of your Shiny app in any of its corners.
 </div>
+
+</br>
+
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/shiny.info)](https://cran.r-project.org/package=shiny.info)
+[![R build status](https://github.com/Appsilon/shiny.info/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/shiny.info/actions?workflow=R-CMD-check)
+[![Codecov test coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/shiny.info?branch=master)
+<!-- badges: end -->
 
 <div class="section level2">
 
