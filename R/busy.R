@@ -84,12 +84,12 @@ transform: translate(19px, 0);
 #'
 #' Displays a spinner indicating if there are any calculations running on the server side.
 #'
-#' Currently available loaders: dots, spinner.
+#' Currently available loaders: "dots", "spinner".
 #'
 #' Solution inspired by: \url{https://colinfay.me/watch-r-shiny/}.
 #'
 #' @param loader character or list. If character given, then it selects from one of a few
-#' available loaders (look Description for more). By using list you can create your custom loder.
+#' available loaders (look Details for more). By using list you can create your custom loder.
 #' List needs to have structure \code{loader <- list(css<-"CSS CODE", html <- div("CODE TO DISPLAY"))}.
 #' @param position character with position of the parameter. Default "top right".
 #'

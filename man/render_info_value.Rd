@@ -31,16 +31,19 @@ If you want to use it with toggle_info(),
  rendering when the value is hidden.
 }
 \examples{
-\dontrun{
-# ui
+if(interactive()){
+library(shiny)
+library(shiny.info)
 
-info_value("value_to_display")
+ui <- fluidPage(
+  info_value("value_to_display")
+)
 
-# server
-
-test_reactive <- reactiveVal("some value")
-output$value_to_display <- render_info_value(expr = test_reactive())
- # next line is required to work with toggle_info()
-outputOptions(output, "value_to_display", suspendWhenHidden = FALSE)
+server <- function(input, output, session) {
+  test_reactive <- reactiveVal("some value")
+  output$value_to_display <- render_info_value(expr = test_reactive())
+  # next line is required to work with toggle_info()
+  outputOptions(output, "value_to_display", suspendWhenHidden = FALSE)
+}
 }
 }
