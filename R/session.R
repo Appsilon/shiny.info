@@ -10,16 +10,19 @@
 #' @importFrom shiny createRenderFunction
 #'
 #' @examples
-#' \dontrun{
-#' # ui
+#' if(interactive()) {
+#' library(shiny)
+#' library(shiny.info)
 #'
-#' info_value("session_info")
+#' ui <- fluidPage(
+#'    info_value("session_info")
+#' )
 #'
-#' # server
-#'
-#' outputsession_info <- render_session_info()
-#'  # next line is required to work with toggle_info()
-#' outputOptions(output, "session_info", suspendWhenHidden = FALSE)
+#' server <- function(input, output, session) {
+#'   outputsession_info <- render_session_info()
+#'   # next line is required to work with toggle_info()
+#'   outputOptions(output, "session_info", suspendWhenHidden = FALSE)
+#' }
 #' }
 #' @export
 render_session_info <- function() {

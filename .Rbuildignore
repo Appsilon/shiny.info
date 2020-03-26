@@ -13,3 +13,4 @@
 ^docs$
 ^examples$
 ^\.github/workflows$
+^README.md$
