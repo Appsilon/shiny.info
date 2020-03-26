@@ -2,13 +2,12 @@
 <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
 <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
-# shiny.info
+# \# shiny.info <a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="139" /></a>
 
 <div class="subheader">
 
-Display simple diagnostic info of your Shiny app in any of its corners.
-
-</div>
+Display simple information of the ‘shiny’ project in the user interface
+of the app.
 
 </br>
 
