@@ -2,7 +2,7 @@
 <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
 <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
-# shiny.info <a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="139" /></a>
+# shiny.info <a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
 
 <div class="subheader">
 
@@ -94,7 +94,7 @@ An example of shiny app that uses `shiny.info` can be found in
         some_value <- reactiveVal("a test value to display")
         output$test_info_value <- shiny.info::render_info_value(some_value())
 
-  - render informations about session
+  - render informations about the session
     
         # in app ui
         shiny.info::info_value("session_info_value")
@@ -113,5 +113,30 @@ An example of shiny app that uses `shiny.info` can be found in
   - toggle display with a key shortcut
     
         shiny.info::toggle_info("Ctrl+Shift+K")
+
+## How to contribute?
+
+If you want to contribute to this project please submit a regular PR,
+once you’re done with new feature or bug fix.<br>
+
+**Changes in documentation**
+
+Both repository **README.md** file and an official documentation page
+are generated with Rmarkdown, so if there is a need to update them,
+please modify accordingly a **README.Rmd** file and use
+[readmebuilder](https://github.com/Appsilon/readmebuilder) package to
+render the new README.
+
+In most cases a simple call of:
+
+``` r
+readmebuilder::build_readme()
+```
+
+is enough.
+
+## Appsilon Data Science
+
+Get in touch [dev@appsilon.com](dev@appsilon.com)
 
 </div>
