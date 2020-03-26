@@ -46,6 +46,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install libgit2
+          Rscript -e "install.packages("Rcpp", repos="https://RcppCore.github.io/drat")"
 
       - name: Install Linux system dependencies
         if: runner.os == 'Linux'
