@@ -34,17 +34,20 @@ info_value <- function(id, position = "top right") {
 #' @importFrom shiny createRenderFunction
 #'
 #' @examples
-#' \dontrun{
-#' # ui
+#' if(interactive()){
+#' library(shiny)
+#' library(shiny.info)
 #'
-#' info_value("value_to_display")
-#'
-#' # server
-#'
-#' test_reactive <- reactiveVal("some value")
-#' output$value_to_display <- render_info_value(expr = test_reactive())
-#'  # next line is required to work with toggle_info()
-#' outputOptions(output, "value_to_display", suspendWhenHidden = FALSE)
+#' ui <- fluidPage(
+#'   info_value("value_to_display")
+#' )
+#' 
+#' server <- function(input, output, session) {
+#'   test_reactive <- reactiveVal("some value")
+#'   output$value_to_display <- render_info_value(expr = test_reactive())
+#'   # next line is required to work with toggle_info()
+#'   outputOptions(output, "value_to_display", suspendWhenHidden = FALSE)
+#' }
 #' }
 #' @export
 render_info_value <- function(expr, env = parent.frame(), quoted = FALSE, sep = " ", add_name = TRUE) {

@@ -3,9 +3,10 @@ Type: Package
 Version: 0.2.0
 Authors@R: c(person("Paweł", "Przytuła", email = "pawel@appsilon.com", role = c("aut")),
              person("Dominik", "Krzemiński", email = "dominik@appsilon.com", role = c("aut")),
-             person("Jakub", "Nowicki", email = "kuba@appsilon.com", role = c("aut", "cre")))
-Title: Shiny Info
-Description: Displays simple diagnostic information of the Shiny project in the User Interface of the app.
+             person("Jakub", "Nowicki", email = "kuba@appsilon.com", role = c("aut", "cre")),
+             person(family = "Appsilon Sp. z o.o.", role = c("cph")))
+Title: 'shiny' Info
+Description: Displays simple diagnostic information of the 'shiny' project in the user interface of the app.
 License: MIT + file LICENSE
 BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8

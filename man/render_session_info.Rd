@@ -18,15 +18,18 @@ Use it with info_value UI function. If you want to use it with toggle_info(),
  rendering when the value is hidden.
 }
 \examples{
-\dontrun{
-# ui
+if(interactive()){
+library(shiny)
+library(shiny.info)
 
-info_value("session_info")
+ui <- fluidPage(
+   info_value("session_info")
+)
 
-# server
-
-outputsession_info <- render_session_info()
- # next line is required to work with toggle_info()
-outputOptions(output, "session_info", suspendWhenHidden = FALSE)
+server <- function(input, output, session) {
+  outputsession_info <- render_session_info()
+  # next line is required to work with toggle_info()
+  outputOptions(output, "session_info", suspendWhenHidden = FALSE)
+}
 }
 }
