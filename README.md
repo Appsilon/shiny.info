@@ -6,8 +6,8 @@
 
 <div class="subheader">
 
-Display simple information of the ‘shiny’ project in the user interface
-of the app.
+Display simple information of the [shiny](https://shiny.rstudio.com/)
+project in the user interface of the app.
 
 </div>
 
