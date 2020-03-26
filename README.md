@@ -25,13 +25,6 @@ coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.sv
 
 <div class="section level2">
 
-What can be displayed there?
-
-  - App version
-  - Code commit
-  - Last data import date
-  - … anything else you find useful for your development
-
 ## How to install?
 
 You can install shiny.info from CRAN repository:
@@ -43,68 +36,82 @@ The most recent version you can get from this repo using
 
     devtools::install_github("Appsilon/shiny.info")
 
-### Example
+## How to use?
 
-Diagnostic info like app version can be displayed with function
-`display()`: `shiny.info::display("My App Version")`. See top right
-corner here:
+Just add one of the `shiny.info` functions to the UI of your app (some
+features require also adding a little bit of code to the server
+function). Check [features section](#basic-features) and
+[documentation](https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf)
+for more details.
+
+An example of shiny app that uses `shiny.info` can be found in
+`./examples` directory.
 
 ![](inst/assets/README_files/example.png)
 
-1.  Install `shiny.info`:
-    `devtools::install_github("Appsilon/shiny.info")`
-2.  Just run the code below:
+## Basic features
 
-<!-- end list -->
+  - simple text message:
+    
+        shiny.info::display("Hello user!", position = "top right")
 
-    library(shiny)
-    shinyApp(
-      ui = tagList(
-        shiny.info::display("2.0.5"),
-        pageWithSidebar(
-          headerPanel('Iris k-means clustering'),
-          sidebarPanel(
-            selectInput('xcol', 'X Variable', names(iris)),
-            selectInput('ycol', 'Y Variable', names(iris),
-                        selected=names(iris)[[2]]),
-            numericInput('clusters', 'Cluster count', 3,
-                         min = 1, max = 9)
-          ),
-          mainPanel(
-            plotOutput('plot1')
+  - git information:
+    
+        shiny.info::git_info()
+
+  - “powered by” information with link:
+    
+        shiny.info::powered_by("Appsilon", link = "appsilon.com")
+
+  - version:
+    
+        # global variable:
+        VERSION <- "1.2.1"
+        
+        # in app ui
+        shiny.info::version()
+
+  - busy spinner
+    
+        shiny.info::busy()
+
+  - group multiple messages in one panel
+    
+        shiny.info::info_panel(
+            shiny.info::git_info(),
+            shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+            position = "bottom left"
           )
-        )
-      ),
-      server = function(input, output, session) {
 
-        # Combine the selected variables into a new data frame
-        selectedData <- reactive({
-          iris[, c(input$xcol, input$ycol)]
-        })
+## Advanced features
 
-        clusters <- reactive({
-          kmeans(selectedData(), input$clusters)
-        })
+  - render value from the server
+    
+        # in app ui
+        shiny.info::info_value("test_info_value")
+        
+        # in app server
+        some_value <- reactiveVal("a test value to display")
+        output$test_info_value <- shiny.info::render_info_value(some_value())
 
-        output$plot1 <- renderPlot({
-          palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
-                    "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
+  - render informations about session
+    
+        # in app ui
+        shiny.info::info_value("session_info_value")
+        
+        # in app server
+        output$session_info_value <- shiny.info::render_session_info()
 
-          par(mar = c(5.1, 4.1, 0, 1))
-          plot(selectedData(),
-               col = clusters()$cluster,
-               pch = 20, cex = 3)
-          points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
-        })
+  - debug app using `browser()` function just by clicking a button
+    
+        # in app ui
+        shiny.info::inspect_btn_ui()
+        
+        # in app server
+        shiny.info::inspect_btn_server(input)
 
-      }
-    )
-
-### Future work
-
-  - Different UI styles, e.g. adjusted to Shiny Server Pro with
-    authentication box.
-  - Info box hidden by default, displayed on key press.
-  - Diagnostic info about app idle/busy status.
+  - toggle display with a key shortcut
+    
+        shiny.info::toggle_info("Ctrl+Shift+K")
 
 </div>
