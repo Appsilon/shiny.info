@@ -34,14 +34,14 @@ info_value <- function(id, position = "top right") {
 #' @importFrom shiny createRenderFunction
 #'
 #' @examples
-#' if(interactive()){
+#' if(interactive()) {
 #' library(shiny)
 #' library(shiny.info)
 #'
 #' ui <- fluidPage(
 #'   info_value("value_to_display")
 #' )
-#' 
+#'
 #' server <- function(input, output, session) {
 #'   test_reactive <- reactiveVal("some value")
 #'   output$value_to_display <- render_info_value(expr = test_reactive())

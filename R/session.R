@@ -10,14 +10,14 @@
 #' @importFrom shiny createRenderFunction
 #'
 #' @examples
-#' if(interactive()){
+#' if(interactive()) {
 #' library(shiny)
 #' library(shiny.info)
 #'
 #' ui <- fluidPage(
 #'    info_value("session_info")
 #' )
-#' 
+#'
 #' server <- function(input, output, session) {
 #'   outputsession_info <- render_session_info()
 #'   # next line is required to work with toggle_info()

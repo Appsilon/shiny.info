@@ -49,7 +49,7 @@
 #' @return JS script that adds toggle functionality.
 #'
 #' @examples
-#' if (interactive()){
+#' if (interactive()) {
 #' library(shiny)
 #' library(shiny.info)
 #'
