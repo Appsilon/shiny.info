@@ -59,7 +59,7 @@ How to use?
 
 Just add one of the `shiny.info` functions to the UI of your app (some features require also adding a little bit of code to the server function). Check [features section](#basic-features) and [documentation](https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf) for more details.
 
-An example of shiny app that uses `shiny.info` can be found in `./examples` directory.
+An example of a shiny app that uses `shiny.info` can be found in `./examples` directory.
 
 ![](inst/assets/README_files/example.gif)
 
@@ -148,7 +148,7 @@ If you want to contribute to this project please submit a regular PR, once you'r
 
 **Changes in documentation**
 
-Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file  and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
+Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly a **README.Rmd** file and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
 
 In most cases a simple call of:
 
@@ -162,6 +162,5 @@ Appsilon Data Science
 ------------------
 
 Get in touch [dev@appsilon.com](dev@appsilon.com)
-
 
 </div>

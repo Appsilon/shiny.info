@@ -44,7 +44,7 @@ function). Check [features section](#basic-features) and
 [documentation](https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf)
 for more details.
 
-An example of shiny app that uses `shiny.info` can be found in
+An example of a shiny app that uses `shiny.info` can be found in
 `./examples` directory.
 
 ![](inst/assets/README_files/example.gif)
