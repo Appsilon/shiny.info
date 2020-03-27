@@ -125,10 +125,14 @@ An example of shiny app that uses `shiny.info` can be found in
         
         # in app server
         shiny.info::inspect_btn_server(input)
+    
+    ![](inst/assets/README_files/inspect_button.png)
 
   - toggle display with a key shortcut
     
         shiny.info::toggle_info("Ctrl+Shift+K")
+    
+    ![](inst/assets/README_files/shortcut.gif)
 
 ## How to contribute?
 
