@@ -105,6 +105,8 @@ An example of shiny app that uses `shiny.info` can be found in
         # in app server
         some_value <- reactiveVal("a test value to display")
         output$test_info_value <- shiny.info::render_info_value(some_value())
+    
+    ![](inst/assets/README_files/info_value.png)
 
   - render informations about the session
     
@@ -113,6 +115,8 @@ An example of shiny app that uses `shiny.info` can be found in
         
         # in app server
         output$session_info_value <- shiny.info::render_session_info()
+    
+    ![](inst/assets/README_files/session.png)
 
   - debug app using `browser()` function just by clicking a button
     
