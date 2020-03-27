@@ -51,25 +51,25 @@ An example of a shiny app that uses `shiny.info` can be found in
 
 ## Basic features
 
-  - simple text message:
+  - display a simple text message:
     
         shiny.info::display("Hello user!", position = "top right")
     
     ![](inst/assets/README_files/display.png)
 
-  - git information:
+  - show information about git branch, commit and changes:
     
         shiny.info::git_info()
     
     ![](inst/assets/README_files/git.png)
 
-  - “powered by” information with link:
+  - add “powered by” information with link:
     
         shiny.info::powered_by("Appsilon", link = "appsilon.com")
     
     ![](inst/assets/README_files/powered.png)
 
-  - version:
+  - show app version:
     
         # global variable:
         VERSION <- "1.2.2"
@@ -79,13 +79,13 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/version.png)
 
-  - busy spinner
+  - show a busy spinner when app is calculating:
     
         shiny.info::busy()
     
     ![](inst/assets/README_files/busy.gif)
 
-  - group multiple messages in one panel
+  - group multiple messages in one panel:
     
         shiny.info::info_panel(
             shiny.info::git_info(),
@@ -97,7 +97,7 @@ An example of a shiny app that uses `shiny.info` can be found in
 
 ## Advanced features
 
-  - render value from the server
+  - render value (eg. input, reactive value) from the server:
     
         # in app ui
         shiny.info::info_value("test_info_value")
@@ -108,7 +108,7 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/info_value.png)
 
-  - render informations about the session
+  - render informations about the session:
     
         # in app ui
         shiny.info::info_value("session_info_value")
@@ -118,7 +118,7 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/session.png)
 
-  - debug app using `browser()` function just by clicking a button
+  - debug app using `browser()` function just by clicking a button:
     
         # in app ui
         shiny.info::inspect_btn_ui()
@@ -128,7 +128,7 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/inspect_button.png)
 
-  - toggle display with a key shortcut
+  - toggle display with a key shortcut:
     
         shiny.info::toggle_info("Ctrl+Shift+K")
     
