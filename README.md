@@ -47,17 +47,21 @@ for more details.
 An example of shiny app that uses `shiny.info` can be found in
 `./examples` directory.
 
-![](inst/assets/README_files/example.png)
+![](inst/assets/README_files/example.gif)
 
 ## Basic features
 
   - simple text message:
     
         shiny.info::display("Hello user!", position = "top right")
+    
+    ![](inst/assets/README_files/display.png)
 
   - git information:
     
         shiny.info::git_info()
+    
+    ![](inst/assets/README_files/git.png)
 
   - “powered by” information with link:
     
