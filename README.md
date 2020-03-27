@@ -66,18 +66,24 @@ An example of shiny app that uses `shiny.info` can be found in
   - “powered by” information with link:
     
         shiny.info::powered_by("Appsilon", link = "appsilon.com")
+    
+    ![](inst/assets/README_files/powered.png)
 
   - version:
     
         # global variable:
-        VERSION <- "1.2.1"
+        VERSION <- "1.2.2"
         
         # in app ui
         shiny.info::version()
+    
+    ![](inst/assets/README_files/version.png)
 
   - busy spinner
     
         shiny.info::busy()
+    
+    ![](inst/assets/README_files/busy.gif)
 
   - group multiple messages in one panel
     
@@ -86,6 +92,8 @@ An example of shiny app that uses `shiny.info` can be found in
             shiny.info::powered_by("Appsilon", link = "appsilon.com"),
             position = "bottom left"
           )
+    
+    ![](inst/assets/README_files/panel.png)
 
 ## Advanced features
 
