@@ -25,18 +25,18 @@ coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.sv
 
 <div class="section level2">
 
-## How to install?
+## How to install shiny.info?
 
 You can install shiny.info from CRAN repository:
 
     install.packages("shiny.info")
 
-The most recent version you can get from this repo using
+You can get the most recent version from this repo using
 [devtools](https://github.com/hadley/devtools).
 
     devtools::install_github("Appsilon/shiny.info")
 
-## How to use?
+## How to use shiny.info?
 
 Just add one of the `shiny.info` functions to the UI of your app (some
 features require also adding a little bit of code to the server
@@ -108,7 +108,7 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/info_value.png)
 
-  - render informations about the session:
+  - render information about the session:
     
         # in app ui
         shiny.info::info_value("session_info_value")
@@ -134,16 +134,16 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/shortcut.gif)
 
-## How to contribute?
+## How can I contribute?
 
-If you want to contribute to this project please submit a regular PR,
-once you’re done with new feature or bug fix.<br>
+If you want to contribute to this project please submit a regular PR
+once you’re done with your new feature or bug fix.<br>
 
 **Changes in documentation**
 
 Both repository **README.md** file and an official documentation page
 are generated with Rmarkdown, so if there is a need to update them,
-please modify accordingly a **README.Rmd** file and use
+please modify accordingly with a **README.Rmd** file and use
 [readmebuilder](https://github.com/Appsilon/readmebuilder) package to
 render the new README.
 
