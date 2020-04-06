@@ -8,92 +8,158 @@ params:
    repo_url: https://github.com/Appsilon/shiny.info
 ---
 
+```{r, echo = FALSE, message = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "inst/assets/README_files",
+  out.width = "100%"
+)
+suppressWarnings(library(shiny.info))
+```
+
 <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
 <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
-`r params$repo_name`
+shiny.info <a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
 ===========
 
 <div class="subheader">
-Display simple diagnostic info of your Shiny app in any of its corners.
+Display simple information of the [shiny](https://shiny.rstudio.com/) project in the user interface of the app.
 </div>
+
+</br>
+
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/shiny.info)](https://cran.r-project.org/package=shiny.info)
+[![R build status](https://github.com/Appsilon/shiny.info/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/shiny.info/actions?workflow=R-CMD-check)
+[![Codecov test coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/shiny.info?branch=master)
+<!-- badges: end -->
 
 <div class="section level2">
 
-What can be displayed there?
-
-* App version
-* Code commit
-* Last data import date
-* ... anything else you find useful for your development
-
-How to install?
+How to install shiny.info?
 ---------------
 
-The most recent version you can get from this repo using [devtools](https://github.com/hadley/devtools).
+You can install shiny.info from CRAN repository:
+
+```
+install.packages("shiny.info")
+```
+
+You can get the most recent version from this repo using [devtools](https://github.com/hadley/devtools).
 
 ```
 devtools::install_github("Appsilon/shiny.info")
 ```
 
-### Example
+How to use shiny.info?
+-----------
 
-Diagnostic info like app version can be displayed with function `display()`: `shiny.info::display("My App Version")`. See top right corner here:
+Just add one of the `shiny.info` functions to the UI of your app (some features require also adding a little bit of code to the server function). Check [features section](#basic-features) and [documentation](https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf) for more details.
 
-![](inst/assets/README_files/example.png)
+An example of a shiny app that uses `shiny.info` can be found in `./examples` directory.
 
-1. Install `shiny.info`: `devtools::install_github("Appsilon/shiny.info")`
-2. Just run the code below:
+![](inst/assets/README_files/example.gif)
 
-```
-library(shiny)
-shinyApp(
-  ui = tagList(
-    shiny.info::display("2.0.5"),
-    pageWithSidebar(
-      headerPanel('Iris k-means clustering'),
-      sidebarPanel(
-        selectInput('xcol', 'X Variable', names(iris)),
-        selectInput('ycol', 'Y Variable', names(iris),
-                    selected=names(iris)[[2]]),
-        numericInput('clusters', 'Cluster count', 3,
-                     min = 1, max = 9)
-      ),
-      mainPanel(
-        plotOutput('plot1')
-      )
+Basic features
+-------
+
+* display a simple text message:
+  ```
+  shiny.info::display("Hello user!", position = "top right")
+  ```
+  ![](inst/assets/README_files/display.png)
+* show information about git branch, commit and changes:
+  ```
+  shiny.info::git_info()
+  ```
+  ![](inst/assets/README_files/git.png)
+* add "powered by" information with link:
+  ```
+  shiny.info::powered_by("Appsilon", link = "appsilon.com")
+  ```
+  ![](inst/assets/README_files/powered.png)
+* show app version:
+  ```
+  # global variable:
+  VERSION <- "1.2.2"
+
+  # in app ui
+  shiny.info::version()
+  ```
+  ![](inst/assets/README_files/version.png)
+* show a busy spinner when app is calculating:
+  ```
+  shiny.info::busy()
+  ```
+  ![](inst/assets/README_files/busy.gif)
+* group multiple messages in one panel:
+  ```
+  shiny.info::info_panel(
+      shiny.info::git_info(),
+      shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+      position = "bottom left"
     )
-  ),
-  server = function(input, output, session) {
+  ```
+  ![](inst/assets/README_files/panel.png)
 
-    # Combine the selected variables into a new data frame
-    selectedData <- reactive({
-      iris[, c(input$xcol, input$ycol)]
-    })
+Advanced features
+-------
 
-    clusters <- reactive({
-      kmeans(selectedData(), input$clusters)
-    })
+* render value (eg. input, reactive value) from the server:
+  ```
+  # in app ui
+  shiny.info::info_value("test_info_value")
 
-    output$plot1 <- renderPlot({
-      palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
-                "#FF7F00", "#FFFF33", "#A65628", "#F781BF", "#999999"))
+  # in app server
+  some_value <- reactiveVal("a test value to display")
+  output$test_info_value <- shiny.info::render_info_value(some_value())
+  ```
+  ![](inst/assets/README_files/info_value.png)
+* render information about the session:
+  ```
+  # in app ui
+  shiny.info::info_value("session_info_value")
 
-      par(mar = c(5.1, 4.1, 0, 1))
-      plot(selectedData(),
-           col = clusters()$cluster,
-           pch = 20, cex = 3)
-      points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
-    })
+  # in app server
+  output$session_info_value <- shiny.info::render_session_info()
+  ```
+  ![](inst/assets/README_files/session.png)
+* debug app using `browser()` function just by clicking a button:
+  ```
+  # in app ui
+  shiny.info::inspect_btn_ui()
 
-  }
-)
+  # in app server
+  shiny.info::inspect_btn_server(input)
+  ```
+  ![](inst/assets/README_files/inspect_button.png)
+* toggle display with a key shortcut:
+  ```
+  shiny.info::toggle_info("Ctrl+Shift+K")
+  ```
+  ![](inst/assets/README_files/shortcut.gif)
+
+How can I contribute?
+-----------------
+If you want to contribute to this project please submit a regular PR once you're done with your new feature or bug fix.<br>
+
+**Changes in documentation**
+
+Both repository **README.md** file and an official documentation page are generated with Rmarkdown, so if there is a need to update them, please modify accordingly with a **README.Rmd** file and use [readmebuilder](https://github.com/Appsilon/readmebuilder) package to render the new README.
+
+In most cases a simple call of:
+
+```r
+readmebuilder::build_readme()
 ```
 
-### Future work
+is enough.
 
-* Different UI styles, e.g. adjusted to Shiny Server Pro with authentication box.
-* Info box hidden by default, displayed on key press.
-* Diagnostic info about app idle/busy status.
+Appsilon Data Science
+------------------
+
+Get in touch [dev@appsilon.com](dev@appsilon.com)
 
 </div>
