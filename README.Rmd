@@ -1,6 +1,7 @@
 ---
 output: html_document
 always_allow_html: yes
+pagetitle: shiny.info by Appsilon
 params:
    website_url: http://appsilon.com
    logo_url: https://cdn.rawgit.com/Appsilon/website-cdn/gh-pages/logo-white.png
@@ -21,8 +22,9 @@ suppressWarnings(library(shiny.info))
 <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
 <link href='docs/style.css' rel='stylesheet' type='text/css'>
 
-shiny.info <a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
+shiny.info
 ===========
+
 
 <div class="subheader">
 Display simple information of the [shiny](https://shiny.rstudio.com/) project in the user interface of the app.
@@ -30,11 +32,17 @@ Display simple information of the [shiny](https://shiny.rstudio.com/) project in
 
 </br>
 
+<center>
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/shiny.info)](https://cran.r-project.org/package=shiny.info)
 [![R build status](https://github.com/Appsilon/shiny.info/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/shiny.info/actions?workflow=R-CMD-check)
 [![Codecov test coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/shiny.info?branch=master)
 <!-- badges: end -->
+</br>
+
+<a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="center" height="150" /></a>
+
+</center>
 
 <div class="section level2">
 
