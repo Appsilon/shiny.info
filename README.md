@@ -49,6 +49,8 @@ function). Check [features section](#basic-features) and
 [documentation](https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf)
 for more details.
 
+<h3><a href="https://demo.appsilon.ai/apps/shiny_info_demo/">See live demo.</a></h3>
+
 An example of a shiny app that uses `shiny.info` can be found in
 `./examples` directory.
 
