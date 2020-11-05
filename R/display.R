@@ -65,9 +65,11 @@ display <- function(message, position = "top right", type = "message") {
 #' @return div with "powered by".
 #' @export
 #' @importFrom shiny a p
-powered_by <- function(company_name, link = "#", position = "top right") {
-  display(p(style = "margin: 0;", "Powered by ",
-            a(href = link, target = "_blank", company_name)),
+powered_by <- function(company_name, link = "#", position = "top right",
+                       logo = NULL, logo_width = "120px", logo_height = "auto") {
+  display(div(p(style = "margin: 0;", "Powered by ",
+                a(href = link, target = "_blank", company_name)),
+              img(src=logo, width = logo_width, height = logo_height)),
           position,
           type = "powered_by")
 }

@@ -9,7 +9,7 @@ shinyApp(
   ui = tagList(
     shiny.info::info_panel(
       shiny.info::git_info(),
-      shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+      shiny.info::powered_by("Appsilon", link = "appsilon.com", logo = "appsilon.png"),
       shiny.info::inspect_btn_ui(),
       position = "bottom left"
     ),
