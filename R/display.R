@@ -61,6 +61,9 @@ display <- function(message, position = "top right", type = "message") {
 #' @param company_name character with the creator of the app
 #' @param link link to the creator's website
 #' @param position character with position of the parameter. Default "top right".
+#' @param logo web link to a logo image or name of the image file in ./www
+#' @param logo_width width of the logo in pixels
+#' @param logo_height height of the logo in pixels
 #'
 #' @return div with "powered by".
 #' @export
@@ -69,7 +72,7 @@ powered_by <- function(company_name, link = "#", position = "top right",
                        logo = NULL, logo_width = "120px", logo_height = "auto") {
   display(div(p(style = "margin: 0;", "Powered by ",
                 a(href = link, target = "_blank", company_name)),
-              img(src=logo, width = logo_width, height = logo_height)),
+              a(href = link, target = "_blank", img(src = logo, width = logo_width, height = logo_height))),
           position,
           type = "powered_by")
 }
