@@ -18,7 +18,7 @@ Use it with info_value UI function. If you want to use it with toggle_info(),
  rendering when the value is hidden.
 }
 \examples{
-if(interactive()){
+if(interactive()) {
 library(shiny)
 library(shiny.info)
 

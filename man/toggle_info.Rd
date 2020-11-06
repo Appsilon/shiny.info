@@ -25,7 +25,7 @@ toggle_info() should be added in the header of the application in ui.R,
  rendering when the value is hidden.
 }
 \examples{
-if (interactive()){
+if (interactive()) {
 library(shiny)
 library(shiny.info)
 

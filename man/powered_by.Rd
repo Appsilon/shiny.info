@@ -4,7 +4,14 @@
 \alias{powered_by}
 \title{Powered by}
 \usage{
-powered_by(company_name, link = "#", position = "top right")
+powered_by(
+  company_name,
+  link = "#",
+  position = "top right",
+  logo = NULL,
+  logo_width = "120px",
+  logo_height = "auto"
+)
 }
 \arguments{
 \item{company_name}{character with the creator of the app}
@@ -12,6 +19,12 @@ powered_by(company_name, link = "#", position = "top right")
 \item{link}{link to the creator's website}
 
 \item{position}{character with position of the parameter. Default "top right".}
+
+\item{logo}{web link to a logo image or name of the image file in ./www}
+
+\item{logo_width}{width of the logo in pixels}
+
+\item{logo_height}{height of the logo in pixels}
 }
 \value{
 div with "powered by".
