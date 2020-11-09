@@ -71,18 +71,18 @@ display <- function(message, position = "top right", type = "message") {
 #' @importFrom shiny a p
 powered_by <- function(company_name, link = "#", position = "top right",
                        logo = NULL, logo_width = "120px", logo_height = "auto", inline = FALSE) {
-  if(inline){
+  if (inline) {
     style_inline <- "display: inline-block;"
-  } else{
+  } else {
     style_inline <- ""
   }
   display(
     div(
-      p(style = paste0("margin: 0;", style_inline), 
+      p(style = paste0("margin: 0;", style_inline),
         "Powered by ",
         a(href = link, target = "_blank", company_name)),
-      a(style = paste0(style_inline), 
-        href = link, target = "_blank", 
+      a(style = paste0(style_inline),
+        href = link, target = "_blank",
         img(src = logo, width = logo_width, height = logo_height))
     ),
     position,
