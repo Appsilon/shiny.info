@@ -64,17 +64,29 @@ display <- function(message, position = "top right", type = "message") {
 #' @param logo web link to a logo image or name of the image file in ./www
 #' @param logo_width width of the logo in pixels
 #' @param logo_height height of the logo in pixels
+#' @param inline if TRUE, display text and logo on the same line
 #'
 #' @return div with "powered by".
 #' @export
 #' @importFrom shiny a p
 powered_by <- function(company_name, link = "#", position = "top right",
-                       logo = NULL, logo_width = "120px", logo_height = "auto") {
-  display(div(p(style = "margin: 0;", "Powered by ",
-                a(href = link, target = "_blank", company_name)),
-              a(href = link, target = "_blank", img(src = logo, width = logo_width, height = logo_height))),
-          position,
-          type = "powered_by")
+                       logo = NULL, logo_width = "120px", logo_height = "auto", inline = FALSE) {
+  if(inline){
+    style_inline <- "display: inline-block;"
+  } else{
+    style_inline <- ""
+  }
+  display(
+    div(
+      p(style = paste0("margin: 0;", style_inline), 
+        "Powered by ",
+        a(href = link, target = "_blank", company_name)),
+      a(style = paste0(style_inline), 
+        href = link, target = "_blank", 
+        img(src = logo, width = logo_width, height = logo_height))
+    ),
+    position,
+    type = "powered_by")
 }
 
 

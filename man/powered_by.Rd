@@ -10,7 +10,8 @@ powered_by(
   position = "top right",
   logo = NULL,
   logo_width = "120px",
-  logo_height = "auto"
+  logo_height = "auto",
+  inline = FALSE
 )
 }
 \arguments{
@@ -25,6 +26,8 @@ powered_by(
 \item{logo_width}{width of the logo in pixels}
 
 \item{logo_height}{height of the logo in pixels}
+
+\item{inline}{if TRUE, display text and logo on the same line}
 }
 \value{
 div with "powered by".
