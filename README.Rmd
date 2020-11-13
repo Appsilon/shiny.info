@@ -148,6 +148,25 @@ Advanced features
   shiny.info::toggle_info("Ctrl+Shift+K")
   ```
   ![](inst/assets/README_files/shortcut.gif)
+* use of glue to show custom message:
+
+  use global variables:
+  ```
+  # in app global
+  VERSION = "1.2.2"
+  REPO = repository_head(repository("."))[[1]]
+  GIT_COMMIT_MESSAGE = commits(repository("."))[[1]]$message
+  GIT_COMMIT_HASH = commits(repository("."))[[1]]$sha
+
+  # in app ui
+  shiny.info::display(
+      message = glue("I am running on repository {REPO} 
+      from [{GIT_COMMIT_HASH}]: {GIT_COMMIT_MESSAGE}, 
+      and this is version: {VERSION}"), 
+      position = "top right", 
+      type = "custom_message"
+      )
+  ```
 
 How can I contribute?
 -----------------
