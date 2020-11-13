@@ -9,6 +9,7 @@
 
 Display simple information of the [shiny](https://shiny.rstudio.com/)
 project in the user interface of the app.
+<a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
 
 </div>
 
@@ -24,9 +25,7 @@ status](https://www.r-pkg.org/badges/version/shiny.info)](https://cran.r-project
 status](https://github.com/Appsilon/shiny.info/workflows/R-CMD-check/badge.svg)](https://github.com/Appsilon/shiny.info/actions?workflow=R-CMD-check)
 [![Codecov test
 coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/shiny.info?branch=master)
-<!-- badges: end --> </br>
-
-<a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="center" height="150" /></a>
+<!-- badges: end -->
 
 </center>
 
@@ -50,6 +49,8 @@ features require also adding a little bit of code to the server
 function). Check [features section](#basic-features) and
 [documentation](https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf)
 for more details.
+
+<h3><a href="https://demo.appsilon.ai/apps/shiny_info_demo/">See live demo.</a></h3>
 
 An example of a shiny app that uses `shiny.info` can be found in
 `./examples` directory.
@@ -140,7 +141,7 @@ An example of a shiny app that uses `shiny.info` can be found in
         shiny.info::toggle_info("Ctrl+Shift+K")
     
     ![](inst/assets/README_files/shortcut.gif)
-
+    
   - show custom message using global variables:
     
         # in app global
@@ -160,7 +161,7 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/global_variables_custom_message.png)
     
-      - show custom message using reactive variables:
+  - show custom message using reactive variables:
     
     <!-- end list -->
     
