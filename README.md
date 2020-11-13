@@ -143,7 +143,9 @@ An example of a shiny app that uses `shiny.info` can be found in
     ![](inst/assets/README_files/shortcut.gif)
     
   - show custom message using global variables:
-    
+  
+        # the packages git2r and glue are loaded as dependencies
+        
         # in app global
         VERSION = "1.2.2"
         REPO = git2r::repository_head(repository("."))[[1]]
@@ -152,7 +154,7 @@ An example of a shiny app that uses `shiny.info` can be found in
         
         # in app ui
         shiny.info::display(
-            message = glue("I am running on repository {REPO} 
+            message = glue::glue("I am running on repository {REPO} 
             from [{GIT_COMMIT_HASH}]: {GIT_COMMIT_MESSAGE}, 
             and this is version: {VERSION}"), 
             position = "top right", 
@@ -165,6 +167,8 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     <!-- end list -->
     
+        # the packages git2r and glue are loaded as dependencies
+        
         # in app ui
         shiny.info::info_value("test_info_value", position = "top right")
         
@@ -174,7 +178,7 @@ An example of a shiny app that uses `shiny.info` can be found in
             rnorm(1,1)
           })
         
-          output$test_info_value <- shiny.info::render_info_value(glue("a: {a()}, 
+          output$test_info_value <- shiny.info::render_info_value(glue::glue("a: {a()}, 
           X Variable: {input$xcol}"), add_name = FALSE)
     
     ![](inst/assets/README_files/reactive_variables_custom_message.png)
