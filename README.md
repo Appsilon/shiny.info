@@ -140,15 +140,13 @@ An example of a shiny app that uses `shiny.info` can be found in
     
     ![](inst/assets/README_files/shortcut.gif)
 
-  - use of glue to show custom message:
-    
-    use global variables:
+  - show custom message using global variables:
     
         # in app global
         VERSION = "1.2.2"
-        REPO = repository_head(repository("."))[[1]]
-        GIT_COMMIT_MESSAGE = commits(repository("."))[[1]]$message
-        GIT_COMMIT_HASH = commits(repository("."))[[1]]$sha
+        REPO = git2r::repository_head(repository("."))[[1]]
+        GIT_COMMIT_MESSAGE = git2r::commits(repository("."))[[1]]$message
+        GIT_COMMIT_HASH = git2r::commits(repository("."))[[1]]$sha
         
         # in app ui
         shiny.info::display(
@@ -158,6 +156,26 @@ An example of a shiny app that uses `shiny.info` can be found in
             position = "top right", 
             type = "custom_message"
             )
+    
+    ![](inst/assets/README_files/global_variables_custom_message.png)
+    
+      - show custom message using reactive variables:
+    
+    <!-- end list -->
+    
+        # in app ui
+        shiny.info::info_value("test_info_value", position = "top right")
+        
+        # in app server
+          a <- reactive({
+            input$xcol
+            rnorm(1,1)
+          })
+        
+          output$test_info_value <- shiny.info::render_info_value(glue("a: {a()}, 
+          X Variable: {input$xcol}"), add_name = FALSE)
+    
+    ![](inst/assets/README_files/reactive_variables_custom_message.png)
 
 ## How can I contribute?
 
