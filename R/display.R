@@ -73,6 +73,24 @@ powered_by <- function(company_name, link = "#", position = "top right") {
 }
 
 
+#' Link
+#'
+#' Displays link to specified url
+#'
+#' @param label character with the name of the link
+#' @param url address of the link
+#' @param position character with position of the parameter. Default "top right".
+#'
+#' @return div with the link
+#' @export
+#' @importFrom shiny a p
+link <- function(label, url = "#", position = "top right") {
+  display(a(href = url, target = "_blank", label),
+          position,
+          type = label)
+}
+
+
 #' Auxiliary function that returns list of arguments for parent calling function
 #'
 #' @param fun string; for what function to look for

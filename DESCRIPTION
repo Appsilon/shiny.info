@@ -10,7 +10,7 @@ Description: Displays simple diagnostic information of the 'shiny' project in th
 License: MIT + file LICENSE
 BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 6.1.2
 Imports:
     git2r (>= 0.22.1),
     glue,
