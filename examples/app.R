@@ -9,7 +9,7 @@ shinyApp(
   ui = tagList(
     shiny.info::info_panel(
       shiny.info::git_info(),
-      shiny.info::powered_by("Appsilon", link = "appsilon.com"),
+      shiny.info::powered_by("Appsilon", link = "https://appsilon.com/", logo = "appsilon.svg"),
       shiny.info::inspect_btn_ui(),
       position = "bottom left"
     ),
@@ -22,7 +22,7 @@ shinyApp(
       sidebarPanel(
         selectInput('xcol', 'X Variable', names(iris)),
         selectInput('ycol', 'Y Variable', names(iris),
-                    selected=names(iris)[[2]]),
+                    selected = names(iris)[[2]]),
         numericInput('clusters', 'Cluster count', 3,
                      min = 1, max = 9)
       ),
@@ -32,7 +32,7 @@ shinyApp(
     )
   ),
   server = function(input, output, session) {
-    
+
     #info value
     output$test_info_value <- shiny.info::render_info_value(input$xcol)
     outputOptions(output, "test_info_value", suspendWhenHidden = FALSE)
@@ -81,9 +81,9 @@ shinyApp(
            pch = 20, cex = 3)
       points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
     })
-    
+
     shiny.info::inspect_btn_server(input)
-    
+
     observe({
       showModal(
         modalDialog(

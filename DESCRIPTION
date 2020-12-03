@@ -1,6 +1,6 @@
 Package: shiny.info
 Type: Package
-Version: 0.2.0
+Version: 0.2.0.9000
 Authors@R: c(person("Paweł", "Przytuła", email = "pawel@appsilon.com", role = c("aut")),
              person("Dominik", "Krzemiński", email = "dominik@appsilon.com", role = c("aut")),
              person("Jakub", "Nowicki", email = "kuba@appsilon.com", role = c("aut", "cre")),
@@ -10,7 +10,7 @@ Description: Displays simple diagnostic information of the 'shiny' project in th
 License: MIT + file LICENSE
 BugReports: https://github.com/Appsilon/shiny.info/issues
 Encoding: UTF-8
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Imports:
     git2r (>= 0.22.1),
     glue,

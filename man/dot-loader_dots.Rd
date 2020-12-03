@@ -4,7 +4,9 @@
 \name{.loader_dots}
 \alias{.loader_dots}
 \title{CSS/HTML code for a dots loader}
-\format{An object of class \code{list} of length 2.}
+\format{
+An object of class \code{list} of length 2.
+}
 \usage{
 .loader_dots
 }

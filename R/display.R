@@ -61,15 +61,37 @@ display <- function(message, position = "top right", type = "message") {
 #' @param company_name character with the creator of the app
 #' @param link link to the creator's website
 #' @param position character with position of the parameter. Default "top right".
+#' @param logo web link to a logo image or name of the image file in ./www
+#' @param logo_width width of the logo in pixels
+#' @param logo_height height of the logo in pixels
+#' @param inline if TRUE, display text and logo on the same line
 #'
 #' @return div with "powered by".
 #' @export
 #' @importFrom shiny a p
-powered_by <- function(company_name, link = "#", position = "top right") {
-  display(p(style = "margin: 0;", "Powered by ",
-            a(href = link, target = "_blank", company_name)),
-          position,
-          type = "powered_by")
+powered_by <- function(company_name = NULL, link = "#", position = "top right",
+                       logo = NULL, logo_width = "120px", logo_height = "auto", inline = FALSE) {
+  if (is.null(company_name) & is.null(logo)) {
+    stop("company_name and logo can't be both NULL")
+  }
+  if (inline) {
+    style_inline <- "display: inline-block;"
+  } else {
+    style_inline <- ""
+  }
+  display(
+    div(
+      p(style = paste0("margin: 0;", style_inline),
+        "Powered by ",
+        a(href = link, target = "_blank", company_name)),
+      if (!is.null(logo)) {
+        a(style = paste0(style_inline),
+          href = link, target = "_blank",
+          img(src = logo, width = logo_width, height = logo_height))
+      }
+    ),
+    position,
+    type = "powered_by")
 }
 
 

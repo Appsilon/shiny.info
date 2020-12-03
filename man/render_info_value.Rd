@@ -4,8 +4,13 @@
 \alias{render_info_value}
 \title{Server render function for info value}
 \usage{
-render_info_value(expr, env = parent.frame(), quoted = FALSE,
-  sep = " ", add_name = TRUE)
+render_info_value(
+  expr,
+  env = parent.frame(),
+  quoted = FALSE,
+  sep = " ",
+  add_name = TRUE
+)
 }
 \arguments{
 \item{expr}{value to render}
@@ -31,7 +36,7 @@ If you want to use it with toggle_info(),
  rendering when the value is hidden.
 }
 \examples{
-if(interactive()){
+if(interactive()) {
 library(shiny)
 library(shiny.info)
 
