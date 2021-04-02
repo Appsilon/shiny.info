@@ -1,22 +1,3 @@
-<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
-
-<link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700|Inconsolata" rel="stylesheet" type="text/css">
-<link href='docs/style.css' rel='stylesheet' type='text/css'>
-
-# shiny.info
-
-<div class="subheader">
-
-Display simple information of the [shiny](https://shiny.rstudio.com/)
-project in the user interface of the app.
-<a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
-
-</div>
-
-</br>
-
-<center>
-
 <!-- badges: start -->
 
 [![CRAN
@@ -27,9 +8,14 @@ status](https://github.com/Appsilon/shiny.info/workflows/R-CMD-check/badge.svg)]
 coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.svg)](https://codecov.io/gh/Appsilon/shiny.info?branch=master)
 <!-- badges: end -->
 
-</center>
+<a href = "https://appsilon.com/careers/" target="_blank"><img src="http://d2v95fjda94ghc.cloudfront.net/hiring.png" alt="We are hiring!"/></a>
 
-<div class="section level2">
+# shiny.info
+
+Display simple information of the [shiny](https://shiny.rstudio.com/)
+project in the user interface of the app.
+
+<a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
 
 ## How to install shiny.info?
 
@@ -182,26 +168,19 @@ An example of a shiny app that uses `shiny.info` can be found in
 ## How can I contribute?
 
 If you want to contribute to this project please submit a regular PR
-once you’re done with your new feature or bug fix.<br>
+once you’re done with your new feature or bug fix.
 
 **Changes in documentation**
 
-Both repository **README.md** file and an official documentation page
-are generated with Rmarkdown, so if there is a need to update them,
-please modify accordingly with a **README.Rmd** file and use
-[readmebuilder](https://github.com/Appsilon/readmebuilder) package to
-render the new README.
+Documentation is rendered with `pkgdown`. Just run `pkgdown::build_site()` after editing documentation or `README.md`.
 
-In most cases a simple call of:
-
-``` r
-readmebuilder::build_readme()
-```
 
 is enough.
 
-## Appsilon Data Science
+Appsilon
+========
 
-Get in touch [dev@appsilon.com](dev@appsilon.com)
+<img src="https://avatars0.githubusercontent.com/u/6096772" align="right" alt="" width="6%" />
 
-</div>
+Appsilon is the **Full Service Certified RStudio Partner**. Learn more
+at [appsilon.com](https://appsilon.com). Get in touch `dev@appsilon.com`.
