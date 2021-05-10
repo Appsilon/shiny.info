@@ -5,6 +5,8 @@ library(shiny.info)
 
 VERSION = "1.2.2"
 
+options(shiny.info = TRUE) # Change to FALSE to disable shiny.info.
+
 shinyApp(
   ui = tagList(
     shiny.info::info_panel(

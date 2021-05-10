@@ -19,3 +19,6 @@ div which wraps your message to display it in the {position} corner of your shin
 \description{
 Display message on the top-right corner
 }
+\note{
+You can disable shiny.info by setting options(shiny.info = FALSE).
+}
