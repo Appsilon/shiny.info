@@ -15,7 +15,7 @@ coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.sv
 Display simple information of the [shiny](https://shiny.rstudio.com/)
 project in the user interface of the app.
 
-<a href='https://github.com/Appsilon/shiny.info'><img src='inst/assets/README_files/logo.png' align="right" height="150" /></a>
+<a href='https://github.com/Appsilon/shiny.info'><img src='man/figures/logo.png' align="right" height="150" /></a>
 
 ## How to install shiny.info?
 
@@ -41,129 +41,129 @@ for more details.
 An example of a shiny app that uses `shiny.info` can be found in
 `./examples` directory.
 
-![](inst/assets/README_files/example.gif)
+![](man/figures/example.gif)
 
 ## Basic features
 
   - display a simple text message:
-    
+
         shiny.info::display("Hello user!", position = "top right")
-    
-    ![](inst/assets/README_files/display.png)
+
+    ![](man/figures/display.png)
 
   - show information about git branch, commit and changes:
-    
+
         shiny.info::git_info()
-    
-    ![](inst/assets/README_files/git.png)
+
+    ![](man/figures/git.png)
 
   - add “powered by” information with link:
-    
+
         shiny.info::powered_by("Appsilon", link = "appsilon.com")
-    
-    ![](inst/assets/README_files/powered.png)
+
+    ![](man/figures/powered.png)
 
   - show app version:
-    
+
         # global variable:
         VERSION <- "1.2.2"
-        
+
         # in app ui
         shiny.info::version()
-    
-    ![](inst/assets/README_files/version.png)
+
+    ![](man/figures/version.png)
 
   - show a busy spinner when app is calculating:
-    
+
         shiny.info::busy()
-    
-    ![](inst/assets/README_files/busy.gif)
+
+    ![](man/figures/busy.gif)
 
   - group multiple messages in one panel:
-    
+
         shiny.info::info_panel(
             shiny.info::git_info(),
             shiny.info::powered_by("Appsilon", link = "appsilon.com"),
             position = "bottom left"
           )
-    
-    ![](inst/assets/README_files/panel.png)
+
+    ![](man/figures/panel.png)
 
 ## Advanced features
 
   - render value (eg. input, reactive value) from the server:
-    
+
         # in app ui
         shiny.info::info_value("test_info_value")
-        
+
         # in app server
         some_value <- reactiveVal("a test value to display")
         output$test_info_value <- shiny.info::render_info_value(some_value())
-    
-    ![](inst/assets/README_files/info_value.png)
+
+    ![](man/figures/info_value.png)
 
   - render information about the session:
-    
+
         # in app ui
         shiny.info::info_value("session_info_value")
-        
+
         # in app server
         output$session_info_value <- shiny.info::render_session_info()
-    
-    ![](inst/assets/README_files/session.png)
+
+    ![](man/figures/session.png)
 
   - debug app using `browser()` function just by clicking a button:
-    
+
         # in app ui
         shiny.info::inspect_btn_ui()
-        
+
         # in app server
         shiny.info::inspect_btn_server(input)
-    
-    ![](inst/assets/README_files/inspect_button.png)
+
+    ![](man/figures/inspect_button.png)
 
   - toggle display with a key shortcut:
-    
+
         shiny.info::toggle_info("Ctrl+Shift+K")
-    
-    ![](inst/assets/README_files/shortcut.gif)
-    
+
+    ![](man/figures/shortcut.gif)
+
   - show custom message using global variables:
-    
+
         # in app global
         VERSION = "1.2.2"
         REPO = git2r::repository_head(repository("."))[[1]]
         GIT_COMMIT_MESSAGE = git2r::commits(repository("."))[[1]]$message
         GIT_COMMIT_HASH = git2r::commits(repository("."))[[1]]$sha
-        
+
         # in app ui
         shiny.info::display(
-            message = glue("I am running on repository {REPO} 
-            from [{GIT_COMMIT_HASH}]: {GIT_COMMIT_MESSAGE}, 
-            and this is version: {VERSION}"), 
-            position = "top right", 
+            message = glue("I am running on repository {REPO}
+            from [{GIT_COMMIT_HASH}]: {GIT_COMMIT_MESSAGE},
+            and this is version: {VERSION}"),
+            position = "top right",
             type = "custom_message"
             )
-    
-    ![](inst/assets/README_files/global_variables_custom_message.png)
-    
+
+    ![](man/figures/global_variables_custom_message.png)
+
   - show custom message using reactive variables:
-    
+
     <!-- end list -->
-    
+
         # in app ui
         shiny.info::info_value("test_info_value", position = "top right")
-        
+
         # in app server
           a <- reactive({
             input$xcol
             rnorm(1,1)
           })
-        
-          output$test_info_value <- shiny.info::render_info_value(glue("a: {a()}, 
+
+          output$test_info_value <- shiny.info::render_info_value(glue("a: {a()},
           X Variable: {input$xcol}"), add_name = FALSE)
-    
-    ![](inst/assets/README_files/reactive_variables_custom_message.png)
+
+    ![](man/figures/reactive_variables_custom_message.png)
 
 ## How can I contribute?
 
