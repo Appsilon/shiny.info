@@ -1,10 +1,14 @@
 title: shiny.info
 template:
-  params:
-    bootswatch: yeti
+  bootstrap: 5
+  bootswatch: pulse
+  bslib:
+    pkgdown-nav-height: 100px
+
+url: https://appsilon.github.io/shiny.info/
 
 navbar:
-  type: inverse
+  bg: primary
   left:
     - icon: fa-home
       href: index.html
