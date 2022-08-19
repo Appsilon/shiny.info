@@ -17,3 +17,4 @@ list of function arguments
 \description{
 Auxiliary function that returns list of arguments for parent calling function
 }
+\keyword{internal}

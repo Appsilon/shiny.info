@@ -1,4 +1,5 @@
 #' CSS/HTML code for a spinner loader
+#' @keywords internal
 .loader_spinner <-  list()
 .loader_spinner$css <- "
 #spinner {
@@ -18,6 +19,7 @@ animation: spin 1s ease-in-out infinite;
 .loader_spinner$html <- tags$div(id = "spinner")
 
 #' CSS/HTML code for a dots loader
+#' @keywords internal
 .loader_dots <-  list()
 .loader_dots$css <- "
 .lds-ellipsis {

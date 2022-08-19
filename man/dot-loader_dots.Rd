@@ -13,4 +13,4 @@ An object of class \code{list} of length 2.
 \description{
 CSS/HTML code for a dots loader
 }
-\keyword{datasets}
+\keyword{internal}

@@ -101,6 +101,7 @@ powered_by <- function(company_name = NULL, link = "#", position = "top right",
 #' @param depth negative numeric; how layers above to check the arguments
 #'
 #' @return list of function arguments
+#' @keywords internal
 get_args <- function(fun, depth = -9) {
   cl <- sys.call(depth)
   cl <- match.call(definition = eval(parse(text = fun)), call = cl)
