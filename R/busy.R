@@ -97,7 +97,7 @@ transform: translate(19px, 0);
 #' @import shiny
 #' @export
 busy <- function(loader = "dots", position = "top right") {
-  if (class(loader) == "character")
+  if (is.character(loader))
     loader <- eval(parse(text = paste0(".loader_", loader)))
   shiny::tagList(
     tags$script(
