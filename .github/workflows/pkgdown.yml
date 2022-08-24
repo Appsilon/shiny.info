@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - develop
-      - kuba.documentation-upgrad
+      - kuba.documentation-upgrade
   workflow_dispatch:
 
 name: pkgdown
