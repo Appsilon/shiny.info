@@ -1,4 +1,4 @@
-#' Server render function for rendering informations about user session (app URL, username and pixel ratio)
+#' Server render function for rendering informations about user session
 #'
 #' @details  Use it with info_value UI function. If you want to use it with toggle_info(),
 #'  you have to add outputOptions(output, [session info id], suspendWhenHidden = FALSE) to force

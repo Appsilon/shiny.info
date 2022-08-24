@@ -89,8 +89,9 @@ transform: translate(19px, 0);
 #' Solution inspired by: \url{https://colinfay.me/watch-r-shiny/}.
 #'
 #' @param loader character or list. If character given, then it selects from one of a few
-#' available loaders (look Details for more). By using list you can create your custom loder.
-#' List needs to have structure \code{loader <- list(css<-"CSS CODE", html <- div("CODE TO DISPLAY"))}.
+#'   available loaders (look Details for more). By using list you can create your custom loder.
+#'   List needs to have structure
+#'   \code{loader <- list(css<-"CSS CODE", html <- div("CODE TO DISPLAY"))}.
 #' @param position character with position of the parameter. Default "top right".
 #'
 #' @return shiny tag List with js script, style of spinner and display div

@@ -50,7 +50,11 @@ info_value <- function(id, position = "top right") {
 #' }
 #' }
 #' @export
-render_info_value <- function(expr, env = parent.frame(), quoted = FALSE, sep = " ", add_name = TRUE) {
+render_info_value <- function(expr,
+                              env = parent.frame(),
+                              quoted = FALSE,
+                              sep = " ",
+                              add_name = TRUE) {
     expr_name <- deparse(substitute(expr))
     if (add_name) {
       expr_name <- paste0(deparse(substitute(expr)), " = ")
