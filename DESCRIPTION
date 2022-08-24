@@ -16,6 +16,7 @@ Imports:
     glue,
     shiny
 Suggests:
-    testthat,
+    covr,
     lintr,
-    covr
+    rcmdcheck,
+    testthat
