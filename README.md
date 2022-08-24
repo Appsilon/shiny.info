@@ -14,12 +14,16 @@ coverage](https://codecov.io/gh/Appsilon/shiny.info/branch/master/graph/badge.sv
 
 You can install shiny.info from CRAN repository:
 
-    install.packages("shiny.info")
+```r
+install.packages("shiny.info")
+```
 
 You can get the most recent version from this repo using
 [remotes](https://github.com/r-lib/remotes).
 
-    remotes::install_github("Appsilon/shiny.info")
+```r
+remotes::install_github("Appsilon/shiny.info")
+```
 
 ## How to use shiny.info?
 
