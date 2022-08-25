@@ -71,7 +71,7 @@ display <- function(message, position = "top right", type = "message") {
 #' @importFrom shiny a p
 powered_by <- function(company_name = NULL, link = "#", position = "top right",
                        logo = NULL, logo_width = "120px", logo_height = "auto", inline = FALSE) {
-  if (is.null(company_name) & is.null(logo)) {
+  if (is.null(company_name) && is.null(logo)) {
     stop("company_name and logo can't be both NULL")
   }
   if (inline) {
