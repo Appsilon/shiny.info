@@ -5,7 +5,7 @@
 \title{Powered by}
 \usage{
 powered_by(
-  company_name,
+  company_name = NULL,
   link = "#",
   position = "top right",
   logo = NULL,

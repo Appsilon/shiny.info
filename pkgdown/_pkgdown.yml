@@ -1,18 +1,22 @@
-title: SHINY.INFO
+title: shiny.info
 template:
-  params:
-    bootswatch: yeti
+  bootstrap: 5
+  bootswatch: pulse
+  bslib:
+    pkgdown-nav-height: 100px
+
+url: https://appsilon.github.io/shiny.info/
 
 navbar:
-  type: inverse
+  bg: primary
   left:
     - icon: fa-home
       href: index.html
       text: "Start"
-  right:
     - icon: fa-file-code-o
       text: "Reference"
       href: reference/index.html
+  right:
     - icon: fa-github fa-lg
       href: https://github.com/Appsilon/shiny.info
     - icon: fa-twitter fa-lg
@@ -33,4 +37,5 @@ reference:
   - '`render_info_value`'
   - '`render_session_info`'
   - '`render_session_info`'
+  - '`toggle_info`'
   - '`version`'
