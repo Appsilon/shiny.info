@@ -14,5 +14,4 @@
 ^examples$
 ^\.github/workflows$
 ^README.md$
-_pkgdown\.yml
-renovate\.json
+pkgdown
