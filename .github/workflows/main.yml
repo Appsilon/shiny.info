@@ -4,9 +4,22 @@ name: R-CMD-check
 
 jobs:
   main:
-    name: Check, lint & test
-    runs-on: ubuntu-latest
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+
+    runs-on: ${{ matrix.config.os }}
+
     timeout-minutes: 30
+
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+        - {os: macOS-latest,   r: 'release'}
+        - {os: windows-latest, r: 'release'}
+        - {os: ubuntu-22.04, r: 'devel'}
+        - {os: ubuntu-22.04, r: 'release'}
+        - {os: ubuntu-22.04, r: 'oldrel'}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -14,7 +27,7 @@ jobs:
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.2.0'
+          r-version: ${{ matrix.config.r }}
 
       - name: Install R package dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
@@ -36,5 +49,6 @@ jobs:
           quit(status = length(lints) > 0)
 
       - name: Test coverage
+        if: matrix.config.os == 'ubuntu-22.04' && matrix.config.r == 'release'
         run: |
           Rscript -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")'
