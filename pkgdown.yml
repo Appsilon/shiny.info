@@ -2,7 +2,7 @@ pandoc: 2.14.2
 pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-08-25T11:00Z
+last_built: 2022-09-16T14:27Z
 urls:
   reference: https://appsilon.github.io/shiny.info/reference
   article: https://appsilon.github.io/shiny.info/articles
