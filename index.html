@@ -24,7 +24,12 @@
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
+<![endif]--><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-40M98DVYD5"></script><script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-40M98DVYD5');
+</script>
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -88,8 +93,11 @@
 <a class="anchor" aria-label="anchor" href="#shinyinfo-"></a>
 </h1>
 </div>
-<blockquote><p><em>Display simple information of the <a href="https://shiny.rstudio.com" class="external-link">shiny</a> project in the user interface of the app.</em></p></blockquote>
+<blockquote>
+<p><em>Display simple information of the <a href="https://shiny.rstudio.com" class="external-link">shiny</a> project in the user interface of the app.</em></p>
+</blockquote>
 <!-- badges: start -->
+
 <p>You can install shiny.info from CRAN repository:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"shiny.info"</span><span class="op">)</span></span></code></pre></div>
@@ -101,7 +109,8 @@
 </h2>
 <p>Just add one of the <code>shiny.info</code> functions to the UI of your app (some features require also adding a little bit of code to the server function). Check <a href="#basic-features">features section</a> and <a href="https://cran.r-project.org/web/packages/shiny.info/shiny.info.pdf" class="external-link">documentation</a> for more details.</p>
 <h3 id="how-to-use-shinyinfo-1">
-<a href="https://connect.appsilon.com/shiny_info_demo/" class="external-link">See live demo.</a><a class="anchor" aria-label="anchor" href="#how-to-use-shinyinfo-1"></a>
+<a href="https://connect.appsilon.com/shiny_info_demo/" class="external-link">See live demo.</a>
+<a class="anchor" aria-label="anchor" href="#how-to-use-shinyinfo-1"></a>
 </h3>
 <p>An example of a shiny app that uses <code>shiny.info</code> can be found in <code>./examples</code> directory.</p>
 <p><img src="reference/figures/example.gif"></p>
@@ -109,19 +118,27 @@
 <div class="section level2">
 <h2 id="basic-features">Basic features<a class="anchor" aria-label="anchor" href="#basic-features"></a>
 </h2>
-<ul><li>display a simple text message:</li></ul>
+<ul>
+<li>display a simple text message:</li>
+</ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/display.html">display</a></span><span class="op">(</span><span class="st">"Hello user!"</span>, position <span class="op">=</span> <span class="st">"top right"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/display.png"></p>
-<ul><li>show information about git branch, commit and changes:</li></ul>
+<ul>
+<li>show information about git branch, commit and changes:</li>
+</ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/git_info.html">git_info</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/git.png"></p>
-<ul><li>add “powered by” information with link:</li></ul>
+<ul>
+<li>add “powered by” information with link:</li>
+</ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/powered_by.html">powered_by</a></span><span class="op">(</span><span class="st">"Appsilon"</span>, link <span class="op">=</span> <span class="st">"appsilon.com"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/powered.png"></p>
-<ul><li>show app version:</li></ul>
+<ul>
+<li>show app version:</li>
+</ul>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># global variable:</span></span>
 <span><span class="va">VERSION</span> <span class="op">&lt;-</span> <span class="st">"1.2.2"</span></span>
@@ -129,11 +146,15 @@
 <span><span class="co"># in app ui</span></span>
 <span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/version.html">version</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/version.png"></p>
-<ul><li>show a busy spinner when app is calculating:</li></ul>
+<ul>
+<li>show a busy spinner when app is calculating:</li>
+</ul>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/busy.html">busy</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/busy.gif"></p>
-<ul><li>group multiple messages in one panel:</li></ul>
+<ul>
+<li>group multiple messages in one panel:</li>
+</ul>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/info_panel.html">info_panel</a></span><span class="op">(</span></span>
 <span>    <span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/git_info.html">git_info</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -145,7 +166,9 @@
 <div class="section level2">
 <h2 id="advanced-features">Advanced features<a class="anchor" aria-label="anchor" href="#advanced-features"></a>
 </h2>
-<ul><li>render value (eg. input, reactive value) from the server:</li></ul>
+<ul>
+<li>render value (eg. input, reactive value) from the server:</li>
+</ul>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># in app ui</span></span>
 <span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/info_value.html">info_value</a></span><span class="op">(</span><span class="st">"test_info_value"</span><span class="op">)</span></span>
@@ -154,7 +177,9 @@
 <span><span class="va">some_value</span> <span class="op">&lt;-</span> <span class="fu">reactiveVal</span><span class="op">(</span><span class="st">"a test value to display"</span><span class="op">)</span></span>
 <span><span class="va">output</span><span class="op">$</span><span class="va">test_info_value</span> <span class="op">&lt;-</span> <span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/render_info_value.html">render_info_value</a></span><span class="op">(</span><span class="fu">some_value</span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/info_value.png"></p>
-<ul><li>render information about the session:</li></ul>
+<ul>
+<li>render information about the session:</li>
+</ul>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># in app ui</span></span>
 <span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/info_value.html">info_value</a></span><span class="op">(</span><span class="st">"session_info_value"</span><span class="op">)</span></span>
@@ -162,7 +187,9 @@
 <span><span class="co"># in app server</span></span>
 <span><span class="va">output</span><span class="op">$</span><span class="va">session_info_value</span> <span class="op">&lt;-</span> <span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/render_session_info.html">render_session_info</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/session.png"></p>
-<ul><li>debug app using <code><a href="https://rdrr.io/r/base/browser.html" class="external-link">browser()</a></code> function just by clicking a button:</li></ul>
+<ul>
+<li>debug app using <code><a href="https://rdrr.io/r/base/browser.html" class="external-link">browser()</a></code> function just by clicking a button:</li>
+</ul>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># in app ui</span></span>
 <span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/inspect_btn_ui.html">inspect_btn_ui</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -170,11 +197,15 @@
 <span><span class="co"># in app server</span></span>
 <span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/inspect_btn_server.html">inspect_btn_server</a></span><span class="op">(</span><span class="va">input</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/inspect_button.png"></p>
-<ul><li>toggle display with a key shortcut:</li></ul>
+<ul>
+<li>toggle display with a key shortcut:</li>
+</ul>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/toggle_info.html">toggle_info</a></span><span class="op">(</span><span class="st">"Ctrl+Shift+K"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/shortcut.gif"></p>
-<ul><li>show custom message using global variables:</li></ul>
+<ul>
+<li>show custom message using global variables:</li>
+</ul>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># in app global</span></span>
 <span><span class="va">VERSION</span> <span class="op">=</span> <span class="st">"1.2.2"</span></span>
@@ -191,7 +222,9 @@
 <span>    type <span class="op">=</span> <span class="st">"custom_message"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/global_variables_custom_message.png"></p>
-<ul><li>show custom message using reactive variables:</li></ul>
+<ul>
+<li>show custom message using reactive variables:</li>
+</ul>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># in app ui</span></span>
 <span><span class="fu">shiny.info</span><span class="fu">::</span><span class="fu"><a href="reference/info_value.html">info_value</a></span><span class="op">(</span><span class="st">"test_info_value"</span>, position <span class="op">=</span> <span class="st">"top right"</span><span class="op">)</span></span>
