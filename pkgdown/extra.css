@@ -1,13 +1,13 @@
 .navbar {
-  background-color: #4DB6E4 !important;
+  background-color: #8EC5D0 !important;
 }
 
 #navbar > ul.navbar-nav > li.nav-item a:hover {
-  background-color: #4DB6E4 !important;
+  background-color: #8EC5D0 !important;
 }
 
 .navbar-dark .navbar-nav .active>.nav-link {
-  background-color: #4DB6E4 !important;
+  background-color: #8EC5D0 !important;
   color: #fff;
 }
 
